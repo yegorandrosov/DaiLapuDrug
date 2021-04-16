@@ -1,0 +1,15 @@
+﻿@model IQueryable<PetViewModel>
+
+<div class="mb-5">
+    <a href="@Url.Action("Create", "Pets", new { Area = "Admin" })" class="btn btn-info">Create new</a>
+</div>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add().Titled("Name").Encoded(false).RenderedAs(model => new HtmlString($"<a href=\"" + Url.Action("Edit", "Pets", new { id = model.Id, Area = "Admin" }) + "\">" + model.Name + "</a>"));
+    })
+    .Empty("No data found")
+    .Pageable()
+)

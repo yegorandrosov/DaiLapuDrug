@@ -1,0 +1,13 @@
+﻿@model PetViewModel
+
+@{
+    ViewBag.Title = "Edit Pet";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<form asp-action="Edit" asp-controller="Pets" asp-area="Admin">
+    <input type="hidden" asp-for="Id" />
+
+    <partial name="_Item" model="Model">
+</form>

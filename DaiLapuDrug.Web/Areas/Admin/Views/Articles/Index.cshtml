@@ -1,0 +1,15 @@
+﻿@model IQueryable<ArticleViewModel>
+
+<div class="mb-5">
+    <a href="@Url.Action("Create", "Articles", new { Area = "Admin" })" class="btn btn-info">Create new</a>
+</div>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add().Titled("Title").Encoded(false).RenderedAs(model => new HtmlString($"<a href=\"" + Url.Action("Edit", "Articles", new { id = model.Id, Area = "Admin" }) + "\">" + model.Title + "</a>"));
+    })
+    .Empty("No data found")
+    .Pageable()
+)

@@ -1,0 +1,13 @@
+﻿@model ArticleViewModel
+
+@{
+    ViewBag.Title = "Create Article";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<form asp-action="Create" asp-controller="Articles" asp-area="Admin">
+    <input type="hidden" asp-for="Id" />
+
+    <partial name="_Item" model="Model">
+</form>

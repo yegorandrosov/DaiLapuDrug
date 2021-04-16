@@ -1,0 +1,106 @@
+﻿@model PetViewModel
+
+
+<div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="form-group col-12">
+                <input asp-for="IsPublished" type="checkbox" />
+                <label asp-for="IsPublished" class="control-label">Is published?</label>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" type="text" class="form-control" />
+                @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="AnimalId" class="control-label">Animal ID</label>
+                <input asp-for="AnimalId" type="text" class="form-control" />
+                @Html.ValidationMessageFor(x => x.AnimalId, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="EstimatedDateOfBirth" class="control-label">Estimated DOB</label>
+                <input asp-for="EstimatedDateOfBirth" type="date" class="form-control" />
+                @Html.ValidationMessageFor(x => x.EstimatedDateOfBirth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="form-group col-12">
+                <label class="control-label">&nbsp;</label>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="TypeOptionId" class="control-label">Animal Type</label>
+                <select asp-for="TypeOptionId" asp-items="Model.TypeOptions" class="form-control">
+                    <option value="">Select item</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="BreedOptionId" class="control-label">Breed</label>
+                <select asp-for="BreedOptionId" asp-items="Model.BreedOptions" class="form-control">
+                    <option value="">Select item</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="SizeOptionId" class="control-label">Size</label>
+                <select asp-for="SizeOptionId" asp-items="Model.SizeOptions" class="form-control">
+                    <option value="">Select item</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="ColorOptionId" class="control-label">Color</label>
+                <select asp-for="ColorOptionId" asp-items="Model.ColorOptions" class="form-control">
+                    <option value="">Select item</option>
+                </select>
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="HairOptionId" class="control-label">Hair Type</label>
+                <select asp-for="HairOptionId" asp-items="Model.HairOptions" class="form-control">
+                    <option value="">Select item</option>
+                </select>
+            </div>
+            <div class="col-12"></div>
+
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="StatusOptionIds" class="control-label">Status</label>
+                <input asp-for="StatusOptionIds" type="text" class="form-control" />
+                @Html.ValidationMessageFor(x => x.StatusOptionIds, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-12 col-md-6">
+                <label asp-for="PersonalityOptionIds" class="control-label">Personality</label>
+                <input asp-for="PersonalityOptionIds" type="text" class="form-control" />
+                @Html.ValidationMessageFor(x => x.PersonalityOptionIds, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Description</label>
+            <textarea asp-for="Description" type="text" class="form-control html-editor"></textarea>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <input type="submit" class="btn btn-info" value="Submit" />
+        </div>
+    </div>
+</div>
+
+<!-- Basic Style for Tags Input -->
+<link rel="stylesheet" type="text/css" href="~/css/amsify.suggestags.css">
+
+<!-- Suggest Tags Js -->
+<script type="text/javascript" src="~/js/jquery.amsify.suggestags.js"></script>
+<script>
+        $(function () {
+            $('input[name="StatusOptionIds"]').amsifySuggestags({
+                whiteList: true,
+                suggestions: @(Json.Serialize(Model.StatusOptions))
+            });
+            $('input[name="PersonalityOptionIds"]').amsifySuggestags({
+                whiteList: true,
+                suggestions: @(Json.Serialize(Model.PersonalityOptions))
+            });
+        })
+</script>
