@@ -1,0 +1,28 @@
+﻿@model EditOptionsViewModel
+
+<form asp-action="Edit" asp-controller="Options" asp-area="Admin">
+    <input asp-for="Type" type="hidden" />
+
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <div class="row" id="options_container">
+                @foreach (var item in Model.Options)
+                {
+                    @await Html.PartialAsync("_OptionItem", item);
+                }
+            </div>
+
+        </div>
+
+    </div>
+    <a href="javascript:0" onclick="addNewItem()" class="btn btn-info">Add new item</a>
+    <input type="submit" class="btn btn-info" value="Submit" />
+</form>
+
+<script>
+    function addNewItem() {
+        $.get('@Url.Action("GetOptionPartialView", "Options", new { Area = "Admin" })', function (data) {
+            $('#options_container').append(data);
+        });
+    }
+</script>

@@ -41,6 +41,8 @@ namespace DaiLapuDrug.Web
             CreateMap<Option, TagViewModel>()
                 .ForMember(x => x.Value, cfg => cfg.MapFrom(x => x.Id))
                 .ForMember(x => x.Tag, cfg => cfg.MapFrom(x => x.Value));
+
+            CreateMap<Option, OptionViewModel>().ReverseMap();
         }
     }
 }

@@ -1,0 +1,10 @@
+﻿@model OptionViewModel
+
+@using (Html.BeginCollectionItem("Options"))
+{
+    <div class="form-group col-12">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="Value" type="text" class="form-control"/>
+        <a href="javascript:0" onclick="$(this).parent().remove()">Remove</a>
+    </div>               
+}
