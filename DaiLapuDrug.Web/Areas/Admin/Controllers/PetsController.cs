@@ -32,11 +32,13 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var pets = applicationDbContext.Pets.Where(x => x.IsDeleted == false)
-                .Select(x => new PetViewModel()
+                .Include(x => x.PetOptions)
+                .ThenInclude(x => x.Option)
+                .Select(x => new PetListItemViewModel()
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    IsPublished = x.IsPublished,
+                    Options = mapper.Map<List<OptionViewModel>>(x.PetOptions.Select(x => x.Option).ToList())
                 });
 
             return View(pets);
@@ -160,6 +162,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             petViewModel.BreedOptions = mappingFunc(EOptionType.PetBreed);
             petViewModel.ColorOptions = mappingFunc(EOptionType.PetColor);
             petViewModel.TypeOptions = mappingFunc(EOptionType.PetType);
+            petViewModel.SubTypeOptions = mappingFunc(EOptionType.PetSubType);
             petViewModel.SizeOptions = mappingFunc(EOptionType.PetSize);
 
             petViewModel.StatusOptions = mappingFunc1(EOptionType.PetStatus);
@@ -171,6 +174,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
                 petViewModel.ColorOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetColor)?.OptionId;
                 petViewModel.HairOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetHairType)?.OptionId;
                 petViewModel.TypeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetType)?.OptionId;
+                petViewModel.SubTypeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetSubType)?.OptionId;
                 petViewModel.SizeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetSize)?.OptionId;
 
                 petViewModel.StatusOptionIds = string.Join(",", existingPet.PetOptions.Where(x => x.Option.Type == EOptionType.PetStatus).Select(x => x.OptionId));
@@ -191,7 +195,8 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
                 petViewModel.ColorOptionId,
                 petViewModel.TypeOptionId,
                 petViewModel.SizeOptionId,
-                petViewModel.HairOptionId
+                petViewModel.HairOptionId,
+                petViewModel.SubTypeOptionId
             };
 
             if (!string.IsNullOrWhiteSpace(petViewModel.PersonalityOptionIds))

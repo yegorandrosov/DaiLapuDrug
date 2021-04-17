@@ -6,6 +6,8 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
     {
         public int Id { get; set; }
 
+        public EOptionType Type { get; set; }
+
         public string Value { get; set; }
     }
 }

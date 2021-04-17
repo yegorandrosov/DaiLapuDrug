@@ -1,4 +1,4 @@
-﻿@model IQueryable<PetViewModel>
+﻿@model IQueryable<PetListItemViewModel>
 
 <div class="mb-5">
     <a href="@Url.Action("Create", "Pets", new { Area = "Admin" })" class="btn btn-info">Create new</a>
@@ -9,6 +9,22 @@
     .Build(columns =>
     {
         columns.Add().Titled("Name").Encoded(false).RenderedAs(model => new HtmlString($"<a href=\"" + Url.Action("Edit", "Pets", new { id = model.Id, Area = "Admin" }) + "\">" + model.Name + "</a>"));
+        columns.Add().Titled("Type").Encoded(false)
+        .RenderedAs(model =>
+        {
+
+            var type = model.Options.FirstOrDefault(x => x.Type == EOptionType.PetType)?.Value;
+            var subType = model.Options.FirstOrDefault(x => x.Type == EOptionType.PetSubType)?.Value;
+
+            if (type != null && subType != null)
+            {
+                return $"{type} ({subType})";
+            }
+            else
+            {
+                return type + subType;
+            }
+        });
     })
     .Empty("No data found")
     .Pageable()

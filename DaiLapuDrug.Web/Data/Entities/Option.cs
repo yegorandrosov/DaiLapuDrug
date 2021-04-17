@@ -23,5 +23,6 @@ namespace DaiLapuDrug.Web.Data.Entities
         PetPersonality,
         PetHairType,
         PetStatus,
+        PetSubType,
     }
 }

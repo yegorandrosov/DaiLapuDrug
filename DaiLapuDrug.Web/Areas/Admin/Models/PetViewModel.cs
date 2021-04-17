@@ -28,6 +28,8 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
 
         public int? TypeOptionId { get; set; }
 
+        public int? SubTypeOptionId { get; set; }
+
         public int? BreedOptionId { get; set; }
 
         public int? SizeOptionId { get; set; }
@@ -42,6 +44,8 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
 
         public List<SelectListItem> TypeOptions { get; set; }
 
+        public List<SelectListItem> SubTypeOptions { get; set; }
+
         public List<SelectListItem> BreedOptions { get; set; }
 
         public List<SelectListItem> SizeOptions { get; set; }
@@ -53,5 +57,14 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
         public List<TagViewModel> PersonalityOptions { get; set; }
 
         public List<TagViewModel> StatusOptions { get; set; }
+    }
+
+    public class PetListItemViewModel
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public List<OptionViewModel> Options { get; set; }
     }
 }

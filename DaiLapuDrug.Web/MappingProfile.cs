@@ -15,6 +15,7 @@ namespace DaiLapuDrug.Web
         {
             CreateMap<Pet, PetViewModel>(MemberList.Destination)
                 .ForMember(x => x.TypeOptionId, cfg => cfg.Ignore())
+                .ForMember(x => x.SubTypeOptionId, cfg => cfg.Ignore())
                 .ForMember(x => x.SizeOptionId, cfg => cfg.Ignore())
                 .ForMember(x => x.ColorOptionId, cfg => cfg.Ignore())
                 .ForMember(x => x.PersonalityOptionIds, cfg => cfg.Ignore())
@@ -22,6 +23,7 @@ namespace DaiLapuDrug.Web
                 .ForMember(x => x.BreedOptionId, cfg => cfg.Ignore())
                 .ForMember(x => x.HairOptionId, cfg => cfg.Ignore())
                 .ForMember(x => x.TypeOptions, cfg => cfg.Ignore())
+                .ForMember(x => x.SubTypeOptions, cfg => cfg.Ignore())
                 .ForMember(x => x.BreedOptions, cfg => cfg.Ignore())
                 .ForMember(x => x.SizeOptions, cfg => cfg.Ignore())
                 .ForMember(x => x.ColorOptions, cfg => cfg.Ignore())
