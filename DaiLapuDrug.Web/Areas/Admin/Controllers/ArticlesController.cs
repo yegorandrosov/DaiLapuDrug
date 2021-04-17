@@ -24,7 +24,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var articles = applicationDbContext.Articles.Where(x => x.IsDeleted == false)
+            var articles = applicationDbContext.Articles.Where(x => x.IsDeleted == false && x.PetId == null)
                 .Select(x => new ArticleViewModel()
                 {
                     Id = x.Id,
@@ -59,6 +59,11 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             applicationDbContext.Articles.Add(article);
             applicationDbContext.SaveChanges();
 
+            if (model.PetId != null)
+            {
+                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
+            }
+
             return RedirectToAction(nameof(Index));
         }
 
@@ -91,6 +96,14 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             article.UpdatedAt = DateTime.Now;
             article.Slug = SlugGenerator.SlugGenerator.GenerateSlug(article.Title);
+
+            applicationDbContext.Articles.Update(article);
+            applicationDbContext.SaveChanges();
+
+            if (model.PetId != null)
+            {
+                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
+            }
 
             return RedirectToAction(nameof(Index));
         }

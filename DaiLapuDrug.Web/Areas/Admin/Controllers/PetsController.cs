@@ -151,6 +151,19 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public ActionResult GetPetPosts(int petId)
+        {
+            var articles = applicationDbContext.Articles.Where(x => x.PetId == petId)
+                .Select(x => new PetPostListItemViewModel()
+            {
+                Id = x.Id,
+                Body = x.Body,
+                CreatedAt = x.CreatedAt
+            });
+
+            return PartialView("_PetPosts", articles);
+        }
+
         public void FillViewModel(PetViewModel petViewModel, Pet existingPet = null)
         {
             var allOptions = applicationDbContext.Options.ToList();

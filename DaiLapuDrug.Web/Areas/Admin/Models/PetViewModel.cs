@@ -67,4 +67,13 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
 
         public List<OptionViewModel> Options { get; set; }
     }
+
+    public class PetPostListItemViewModel
+    {
+        public int Id { get; set; }
+
+        public string Body { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+    }
 }

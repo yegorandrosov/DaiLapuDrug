@@ -1,7 +1,14 @@
 ﻿@model ArticleViewModel
 
 @{
-    ViewBag.Title = "Create Article";
+    if (Model.PetId == null)
+    {
+        ViewBag.Title = "Create article";
+    }
+    else
+    {
+        ViewBag.Title = "Create pet post";
+    }
 }
 
 <h3>@ViewBag.Title</h3>

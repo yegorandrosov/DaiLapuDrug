@@ -11,3 +11,20 @@
 
     <partial name="_Item" model="Model">
 </form>
+
+<h3>Posts</h3>
+<div class="mb-2">
+    <a href="@Url.Action("Create", "Articles", new { area = "Admin", petId = Model.Id })" class="btn btn-info">Add new post</a>
+</div>
+
+<div id="posts_container">
+
+</div>
+
+<script>
+    $(function () {
+        $.get('@Url.Action("GetPetPosts", "Pets", new { area = "Admin" })?petId=@Model.Id', function (data) {
+            $('#posts_container').append(data);
+        })
+    })
+</script>
