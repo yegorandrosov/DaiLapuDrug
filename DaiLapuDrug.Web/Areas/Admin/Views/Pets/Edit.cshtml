@@ -12,19 +12,81 @@
     <partial name="_Item" model="Model">
 </form>
 
+<h3>Files</h3>
+<div class="mb-2">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#js-upload-file-modal">Add new file/photo</button>
+</div>
+
+<div id="files_container">
+
+</div>
+
 <h3>Posts</h3>
 <div class="mb-2">
-    <a href="@Url.Action("Create", "Articles", new { area = "Admin", petId = Model.Id })" class="btn btn-info">Add new post</a>
+    <a href="@Url.Action("Create", "Articles", new { area = "Admin", petId = Model.Id })" class="btn btn-primary">Add new post</a>
 </div>
 
 <div id="posts_container">
 
 </div>
 
-<script>
+<div class="modal" id="js-upload-file-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload photo/file</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="dropzone" class="dropzone" asp-action="UploadPetFileAttachments" asp-controller="Pets" asp-area="Admin" enctype="multipart/form-data">
+                    <input name="PetId" value="@Model.Id" type="hidden" />
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" integrity="sha512-jU/7UFiaW5UBGODEopEqnbIAHOI8fO6T99m7Tsmqs2gkdujByJfkCbbfPSN4Wlqlb9TGnsuC0YgUgWkRBK7B9A==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/basic.css" integrity="sha512-+Vla3mZvC+lQdBu1SKhXLCbzoNCl0hQ8GtCK8+4gOJS/PN9TTn0AO6SxlpX8p+5Zoumf1vXFyMlhpQtVD5+eSw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+    <script>
     $(function () {
         $.get('@Url.Action("GetPetPosts", "Pets", new { area = "Admin" })?petId=@Model.Id', function (data) {
             $('#posts_container').append(data);
         })
+
+        function updateFileAttachments() {
+            $.get('@Url.Action("GetPetFileAttachments", "Pets", new { area = "Admin" })?petId=@Model.Id', function (data) {
+                $('#files_container').append(data);
+            })
+        }
+
+        updateFileAttachments();
+
+        Dropzone.autoDiscover = false;
+        try {
+            var myDropzone = new Dropzone("#dropzone", {
+                paramName: "file", // The name that will be used to transfer the file
+                addRemoveLinks: true,
+                dictDefaultMessage:
+                    '<span class="bigger-150 bolder"><i class=" fa fa-caret-right red"></i> Drop files</span> to upload \
+                    <span class="smaller-80 grey">(or click)</span> <br /> \
+                    <i class="upload-icon fa fa-cloud-upload blue fa-3x"></i>'
+                ,
+                dictResponseError: 'Error while uploading file!',
+
+                //change the previewTemplate to use Bootstrap progress bars
+
+            });
+        } catch (e) {
+            //  alert('Dropzone.js does not support older browsers!');
+        }
     })
-</script>
+    </script>
+}

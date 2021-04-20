@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using DaiLapuDrug.Web.Areas.Admin.Models;
 using DaiLapuDrug.Web.Data;
 using DaiLapuDrug.Web.Data.Entities;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using DaiLapuDrug.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,11 +20,13 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
     {
         private readonly ApplicationDbContext applicationDbContext;
         private readonly IMapper mapper;
+        private readonly FileAttachmentService fileAttachmentService;
 
-        public PetsController(ApplicationDbContext applicationDbContext, IMapper mapper)
+        public PetsController(ApplicationDbContext applicationDbContext, IMapper mapper, FileAttachmentService fileAttachmentService)
         {
             this.applicationDbContext = applicationDbContext;
             this.mapper = mapper;
+            this.fileAttachmentService = fileAttachmentService;
         }
 
         public ActionResult Index()
@@ -164,12 +164,52 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return PartialView("_PetPosts", articles);
         }
 
+        public ActionResult GetPetFileAttachments(int petId)
+        {
+            var attachments = applicationDbContext.PetFileAttachments
+                .Where(x => x.PetId == petId)
+                .Select(x => new PetFileAttachmentListItemViewModel()
+            {
+                Id = x.Id,
+                Name = x.FileAttachment.OriginalName,
+                OriginalUrl = x.FileAttachment.Url,
+                PreviewUrl = x.FileAttachment.ThumbUrl,
+                IsImage = x.FileAttachment.IsImage,
+                IsCover = x.IsCover
+            });
+
+            return PartialView("_PetFileAttachments", attachments);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UploadPetFileAttachments(int petId)
+        {
+            var attachments = await fileAttachmentService.UploadFromRequest("pets");
+
+            foreach (var attachment in attachments)
+            {
+                var petFileAttachment = new PetFileAttachment()
+                {
+                    FileAttachment = attachment,
+                    PetId = petId,
+                };
+
+                applicationDbContext.PetFileAttachments.Add(petFileAttachment);
+            }
+
+            await applicationDbContext.SaveChangesAsync();
+
+            return new EmptyResult();
+        }
+
         public void FillViewModel(PetViewModel petViewModel, Pet existingPet = null)
         {
             var allOptions = applicationDbContext.Options.ToList();
 
-            Func<EOptionType, List<SelectListItem>> mappingFunc = e => mapper.Map<List<SelectListItem>>(allOptions.Where(x => x.Type == e).ToList());
-            Func<EOptionType, List<TagViewModel>> mappingFunc1 = e => mapper.Map<List<TagViewModel>>(allOptions.Where(x => x.Type == e).ToList());
+            Func<EOptionType, List<SelectListItem>> mappingFunc = 
+                e => mapper.Map<List<SelectListItem>>(allOptions.Where(x => x.Type == e).ToList());
+            Func<EOptionType, List<TagViewModel>> mappingFunc1 = 
+                e => mapper.Map<List<TagViewModel>>(allOptions.Where(x => x.Type == e).ToList());
 
             petViewModel.HairOptions = mappingFunc(EOptionType.PetHairType);
             petViewModel.BreedOptions = mappingFunc(EOptionType.PetBreed);
@@ -183,15 +223,23 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             if (existingPet != null)
             {
-                petViewModel.BreedOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetBreed)?.OptionId;
-                petViewModel.ColorOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetColor)?.OptionId;
-                petViewModel.HairOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetHairType)?.OptionId;
-                petViewModel.TypeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetType)?.OptionId;
-                petViewModel.SubTypeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetSubType)?.OptionId;
-                petViewModel.SizeOptionId = existingPet.PetOptions.FirstOrDefault(x => x.Option.Type == EOptionType.PetSize)?.OptionId;
+                petViewModel.BreedOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetBreed)?.OptionId;
+                petViewModel.ColorOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetColor)?.OptionId;
+                petViewModel.HairOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetHairType)?.OptionId;
+                petViewModel.TypeOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetType)?.OptionId;
+                petViewModel.SubTypeOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetSubType)?.OptionId;
+                petViewModel.SizeOptionId = existingPet.PetOptions
+                    .FirstOrDefault(x => x.Option.Type == EOptionType.PetSize)?.OptionId;
 
-                petViewModel.StatusOptionIds = string.Join(",", existingPet.PetOptions.Where(x => x.Option.Type == EOptionType.PetStatus).Select(x => x.OptionId));
-                petViewModel.PersonalityOptionIds = string.Join(",", existingPet.PetOptions.Where(x => x.Option.Type == EOptionType.PetPersonality).Select(x => x.OptionId));
+                petViewModel.StatusOptionIds = string.Join(",", existingPet.PetOptions
+                    .Where(x => x.Option.Type == EOptionType.PetStatus).Select(x => x.OptionId));
+                petViewModel.PersonalityOptionIds = string.Join(",", existingPet.PetOptions
+                    .Where(x => x.Option.Type == EOptionType.PetPersonality).Select(x => x.OptionId));
             }
         }
 

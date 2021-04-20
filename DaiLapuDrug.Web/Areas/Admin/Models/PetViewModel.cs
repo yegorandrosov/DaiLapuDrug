@@ -76,4 +76,19 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
 
         public DateTime CreatedAt { get; set; }
     }
+
+    public class PetFileAttachmentListItemViewModel
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string OriginalUrl { get; set; }
+
+        public string PreviewUrl { get; set; }
+
+        public bool IsCover { get; set; }
+
+        public bool IsImage { get; set; }
+    }
 }

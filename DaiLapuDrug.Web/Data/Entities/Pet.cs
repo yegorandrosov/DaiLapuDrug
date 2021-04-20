@@ -31,5 +31,8 @@ namespace DaiLapuDrug.Web.Data.Entities
 
         public virtual ICollection<PetOption> PetOptions { get; set; }
             = new List<PetOption>();
+
+        public virtual ICollection<PetFileAttachment> PetFileAttachments { get; set; }
+            = new List<PetFileAttachment>();
     }
 }

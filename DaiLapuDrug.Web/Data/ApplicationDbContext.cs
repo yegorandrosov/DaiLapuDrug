@@ -20,5 +20,7 @@ namespace DaiLapuDrug.Web.Data
         public DbSet<Option> Options { get; set; }
 
         public DbSet<PetOption> PetOptions { get; set; }
+
+        public DbSet<PetFileAttachment> PetFileAttachments { get; set; }
     }
 }

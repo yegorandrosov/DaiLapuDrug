@@ -4,14 +4,16 @@ using DaiLapuDrug.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DaiLapuDrug.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210418042642_PetFileAttachments_IsCover")]
+    partial class PetFileAttachments_IsCover
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,43 +143,10 @@ namespace DaiLapuDrug.Web.Migrations
                     b.Property<string>("Extension")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImageHeight")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ImageWidth")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsImage")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("MimeType")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("OriginalName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ThumbBlobName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ThumbExtension")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ThumbImageHeight")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ThumbImageWidth")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ThumbMimeType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ThumbName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ThumbUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Url")
+                    b.Property<string>("StorageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

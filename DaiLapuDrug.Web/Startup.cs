@@ -1,6 +1,7 @@
 using AutoMapper;
 using DaiLapuDrug.Web.Data;
 using DaiLapuDrug.Web.Data.Entities;
+using DaiLapuDrug.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,8 @@ namespace DaiLapuDrug.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddHttpContextAccessor();
+
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -45,6 +48,9 @@ namespace DaiLapuDrug.Web
             })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped(_ => new AzureBlobStorageService(Configuration.GetConnectionString("AzureBlobStorage")));
+            services.AddScoped<FileAttachmentService>();
 
             services.AddAutoMapper(typeof(Startup).Assembly);
         }

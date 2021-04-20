@@ -9,7 +9,7 @@ namespace DaiLapuDrug.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        public string StorageUrl { get; set; }
+        public string Url { get; set; }
 
         public string Extension { get; set; }
 
@@ -18,5 +18,27 @@ namespace DaiLapuDrug.Web.Data.Entities
         public string ContainerName { get; set; }
 
         public string OriginalName { get; set; }
+
+        public bool IsImage { get; set; }
+
+        public int ImageWidth { get; set; }
+
+        public int ImageHeight { get; set; }
+
+        public string MimeType { get; set; }
+
+        public string ThumbUrl { get; set; }
+
+        public string ThumbExtension { get; set; }
+
+        public string ThumbBlobName { get; set; }
+
+        public string ThumbName { get; set; }
+
+        public int ThumbImageWidth { get; set; }
+
+        public int ThumbImageHeight { get; set; }
+
+        public string ThumbMimeType { get; set; }
     }
 }
