@@ -61,13 +61,13 @@ namespace DaiLapuDrug.Web.Services
 
                             ms.Position = 0;
 
-                            using NetVips.Image thumb = NetVips.Image.ThumbnailStream(ms, 126, crop: NetVips.Enums.Interesting.Attention);
+                            using NetVips.Image thumb = NetVips.Image.ThumbnailStream(ms, 252, crop: NetVips.Enums.Interesting.Attention);
                             using var thumbMs = new MemoryStream();
                             thumb.WriteToStream(thumbMs, extension);
 
                             thumbMs.Position = 0;
                             fileAttachment.ThumbBlobName = blobName + "-thumb" + extension;
-                            fileAttachment.ThumbImageHeight = fileAttachment.ThumbImageWidth = 126;
+                            fileAttachment.ThumbImageHeight = fileAttachment.ThumbImageWidth = 252;
                             fileAttachment.ThumbExtension = extension;
                             fileAttachment.ThumbMimeType = MimeTypes.GetMimeType(fileAttachment.ThumbBlobName);
                             fileAttachment.ThumbUrl = await blobStorageService.UploadFile(containerName, fileAttachment.ThumbBlobName, thumbMs, fileAttachment.ThumbMimeType);

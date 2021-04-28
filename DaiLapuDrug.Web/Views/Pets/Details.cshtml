@@ -1,0 +1,114 @@
+﻿@model PetDetailsViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+    <script>
+        $(function () {
+            $('.owl-carousel').owlCarousel({
+                margin: 10,
+                items: 1,
+                autoplay: true,
+            })
+        })
+    </script>
+
+}
+
+<div class="row">
+    <div class="col-12 col-md-4">
+        <div class="owl-carousel">
+            @foreach (var imageUrl in Model.ImageUrls)
+            {
+                <div>
+                    <img src="@imageUrl" title="@Model.Name" />
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-12 col-md-8">
+        <h4>@ViewBag.Title</h4>
+        @if (!string.IsNullOrWhiteSpace(Model.AnimalId))
+        {
+            <h6>ID: @Model.AnimalId</h6>
+        }
+
+        <table>
+            @if (!string.IsNullOrWhiteSpace(Model.Age))
+            {
+                <tr>
+                    <td>Возраст</td>
+                    <td>@Model.Age</td>
+                </tr>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Breed))
+            {
+                <tr>
+                    <td>Порода</td>
+                    <td>@Model.Breed</td>
+                </tr>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Color))
+            {
+                <tr>
+                    <td>Окрас</td>
+                    <td>@Model.Color</td>
+                </tr>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Hair))
+            {
+                <tr>
+                    <td>Тип шерсти</td>
+                    <td>@Model.Hair</td>
+                </tr>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Status))
+            {
+                <tr>
+                    <td>Статус</td>
+                    <td>@Model.Status</td>
+                </tr>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(Model.Personality))
+            {
+                <tr>
+                    <td>Характер</td>
+                    <td>@Model.Personality</td>
+                </tr>
+            }
+
+            <tr>
+                <td>Стерилизован</td>
+                <td>@(Model.IsSterilized ? "Да" : "Нет")</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div>
+    @Html.Raw(Model.Description)
+</div>
+
+@if (Model.Posts.Count > 0)
+{
+    <h5 class="mb-2">Новости</h5>
+    <div>
+        @foreach (var post in Model.Posts)
+        {
+            <div class="mb-2" style="border: 1px solid black">
+                <div>@post.Date</div>
+                <div>@Html.Raw(post.Body)</div>
+            </div>
+        } 
+    </div>
+}

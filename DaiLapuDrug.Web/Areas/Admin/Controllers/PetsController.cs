@@ -178,7 +178,48 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
                 IsCover = x.IsCover
             });
 
+            ViewData["PetId"] = petId;
+
             return PartialView("_PetFileAttachments", attachments);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCoverImage(int petId, int petFileAttachmentId)
+        {
+            var petFileAttachments = applicationDbContext.PetFileAttachments.Where(x => x.PetId == petId).ToList();
+            var newCover = petFileAttachments.FirstOrDefault(x => x.Id == petFileAttachmentId);
+
+            petFileAttachments.ForEach(x => 
+            { 
+                x.IsCover = false; 
+                applicationDbContext.PetFileAttachments.Update(x); 
+            });
+
+            newCover.IsCover = true;
+
+            applicationDbContext.SaveChanges();
+
+            return new EmptyResult();
+        }
+
+        [HttpPost]
+        public ActionResult DeletePetFileAttachment(int id)
+        {
+            var toDelete = applicationDbContext.PetFileAttachments.FirstOrDefault(x => x.Id == id);
+            
+            if (toDelete.IsCover)
+            {
+                var anyOther = applicationDbContext.PetFileAttachments.FirstOrDefault(x => x.Id != toDelete.Id && x.PetId == toDelete.PetId);
+
+                anyOther.IsCover = true;
+
+                applicationDbContext.PetFileAttachments.Update(anyOther);
+            }
+
+            applicationDbContext.PetFileAttachments.Remove(toDelete);
+            applicationDbContext.SaveChanges();
+
+            return new EmptyResult();
         }
 
         [HttpPost]

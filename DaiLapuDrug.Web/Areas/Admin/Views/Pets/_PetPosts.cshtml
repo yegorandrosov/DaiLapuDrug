@@ -5,9 +5,9 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add().Titled("Body").Encoded(false).RenderedAs(model => new HtmlString(model.Body));
-        columns.Add().Titled("Date").Encoded(false).RenderedAs(model => model.CreatedAt.ToShortDateString());
-        columns.Add().Titled("").Encoded(false).RenderedAs(model => new HtmlString($"<a href=\"" + Url.Action("Edit", "Articles", new { id = model.Id, Area = "Admin" }) + "\">Edit</a>"));
+        columns.Add().Titled("Новость").Encoded(false).RenderedAs(model => new HtmlString(model.Body));
+        columns.Add().Titled("Дата").Encoded(false).RenderedAs(model => model.CreatedAt.ToShortDateString());
+        columns.Add().Titled("").Encoded(false).RenderedAs(model => new HtmlString($"<a class=\"btn btn-primary\" href=\"" + Url.Action("Edit", "Articles", new { id = model.Id, Area = "Admin" }) + "\">Редактировать</a>"));
     })
     .Empty("No data found")
     .Pageable()
