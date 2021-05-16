@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DaiLapuDrug.Web.Areas.Admin.Models;
 using DaiLapuDrug.Web.Data.Entities;
+using DaiLapuDrug.Web.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,11 @@ namespace DaiLapuDrug.Web
                 .ForMember(x => x.Tag, cfg => cfg.MapFrom(x => x.Value));
 
             CreateMap<Option, OptionViewModel>().ReverseMap();
+
+            CreateMap<ContactViewModel, ContactRequest>()
+                .ForMember(x => x.Id, cfg => cfg.Ignore())
+                .ForMember(x => x.IsNew, cfg => cfg.MapFrom(_ => true))
+                .ForMember(x => x.CreatedAt, cfg => cfg.MapFrom(_ => DateTime.UtcNow));
         }
     }
 }

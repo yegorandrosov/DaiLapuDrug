@@ -29,6 +29,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             this.fileAttachmentService = fileAttachmentService;
         }
 
+        [Route("/admin/pets")]
         public ActionResult Index()
         {
             var pets = applicationDbContext.Pets.Where(x => x.IsDeleted == false)
@@ -44,6 +45,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return View(pets);
         }
 
+        [Route("/admin/pets/create")]
         public ActionResult Create()
         {
             var viewModel = new PetViewModel();
@@ -57,6 +59,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/pets/create")]
         public ActionResult Create(PetViewModel model)
         {
             var pet = mapper.Map<Pet>(model);
@@ -72,6 +75,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Route("/admin/pets/edit")]
         public ActionResult Edit(int id)
         {
             var pet = applicationDbContext.Pets
@@ -93,6 +97,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/pets/edit")]
         public ActionResult Edit(PetViewModel model)
         {
             var pet = applicationDbContext.Pets
@@ -117,6 +122,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Route("/admin/pets/delete")]
         public ActionResult Delete(int id)
         {
             var pet = applicationDbContext.Pets.FirstOrDefault(x => x.Id == id);
@@ -133,6 +139,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/pets/delete")]
         public ActionResult Delete(PetViewModel model)
         {
             var pet = applicationDbContext.Pets.FirstOrDefault(x => x.Id == model.Id);
@@ -151,6 +158,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Route("/admin/pets/posts")]
         public ActionResult GetPetPosts(int petId)
         {
             var articles = applicationDbContext.Articles.Where(x => x.PetId == petId)
@@ -164,6 +172,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return PartialView("_PetPosts", articles);
         }
 
+        [Route("/admin/pets/attachments")]
         public ActionResult GetPetFileAttachments(int petId)
         {
             var attachments = applicationDbContext.PetFileAttachments
@@ -184,6 +193,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("/admin/pets/cover/update")]
         public ActionResult UpdateCoverImage(int petId, int petFileAttachmentId)
         {
             var petFileAttachments = applicationDbContext.PetFileAttachments.Where(x => x.PetId == petId).ToList();
@@ -203,6 +213,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("/admin/pets/attachments/delete")]
         public ActionResult DeletePetFileAttachment(int id)
         {
             var toDelete = applicationDbContext.PetFileAttachments.FirstOrDefault(x => x.Id == id);
@@ -223,6 +234,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("/admin/pets/attachments/create")]
         public async Task<ActionResult> UploadPetFileAttachments(int petId)
         {
             var attachments = await fileAttachmentService.UploadFromRequest("pets");

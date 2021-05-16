@@ -3,3 +3,71 @@
 *@
 @{
 }
+
+<h3>Подписка на новости</h3>
+<form asp-action="Subscribe" asp-controller="Newsletter" id="subscribe-to-newsletters-form">
+    <label class="text-success newsletter-status" style="display: none">Вы успешно подписались на новостную рассылку</label>
+    <label class="text-danger newsletter-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
+    <div class="form-group">
+        <input class="form-control" name="email" placeholder="Ваш электронный адрес" />
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Подписаться" />
+    </div>
+</form>
+
+<h3>Обратная связь</h3>
+<form asp-action="Contact" asp-controller="Home" id="contact-form">
+    <label class="text-success contact-status" style="display: none">Спасибо за ваше сообщение! Мы скоро с вами свяжемся</label>
+    <label class="text-danger contact-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
+    <div class="form-group">
+        <input class="form-control" name="Name" placeholder="Имя" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="Phone" placeholder="Телефон" />
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="Email" placeholder="Электронная почта" />
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="Body" placeholder="Сообщение"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Отправить" />
+    </div>
+</form>
+
+<script>
+    $('#subscribe-to-newsletters-form').submit(function () {
+        event.preventDefault();
+        var form = $(this);
+        var action = form.attr('action');
+        var payload = form.serialize();
+
+        form.find('.newsletter-status').css('display', 'none');
+
+        $.post(action, payload, function () {
+            form.find('.newsletter-status.text-success').css('display', 'unset');
+        }).fail(function (error) {
+            form.find('.newsletter-status.text-danger').css('display', 'unset');
+        });
+    });
+
+    $('#contact-form').submit(function () {
+        event.preventDefault();
+
+        var form = $(this);
+        var action = form.attr('action');
+        var payload = form.serialize();
+
+        form.find('.contact-status').css('display', 'none');
+
+        $.post(action, payload, function () {
+            form.find('.contact-status.text-success').css('display', 'unset');
+
+            form.reset();
+        }).fail(function (error) {
+            form.find('.contact-status.text-danger').css('display', 'unset');
+        });
+    })
+</script>

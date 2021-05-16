@@ -1,0 +1,11 @@
+﻿@model NewsletterCampaignViewModel
+
+<form asp-action="CampaignSend" asp-controller="Newsletter" asp-area="Admin">
+    <input asp-for="Id" type="hidden" />
+    <input type="submit" class="btn btn-primary" value="Отправить" />
+</form> 
+
+<h3>Тело письма</h3>
+<div>
+    @Html.Raw(Model.Content)
+</div>

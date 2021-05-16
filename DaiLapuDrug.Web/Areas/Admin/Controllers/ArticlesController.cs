@@ -22,6 +22,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             this.applicationDbContext = applicationDbContext;
         }
 
+        [Route("/admin/articles")]
         public IActionResult Index()
         {
             var articles = applicationDbContext.Articles.Where(x => x.IsDeleted == false && x.PetId == null)
@@ -37,6 +38,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             return View(articles);
         }
 
+        [Route("/admin/articles/create")]
         public IActionResult Create(int? petId = null)
         {
             var viewModel = new ArticleViewModel()
@@ -49,6 +51,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/articles/create")]
         public IActionResult Create(ArticleViewModel model)
         {
             var article = mapper.Map<Article>(model);
@@ -61,12 +64,13 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             if (model.PetId != null)
             {
-                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
+                return RedirectToAction("Edit", "Animal", new { id = model.PetId });
             }
 
             return RedirectToAction(nameof(Index));
         }
 
+        [Route("/admin/articles/edit")]
         public IActionResult Edit(int id)
         {
             var article = applicationDbContext.Articles.FirstOrDefault(x => x.Id == id);
@@ -83,6 +87,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/articles/edit")]
         public IActionResult Edit(ArticleViewModel model)
         {
             var article = applicationDbContext.Articles.FirstOrDefault(x => x.Id == model.Id);
@@ -102,13 +107,13 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             if (model.PetId != null)
             {
-                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
+                return RedirectToAction("Edit", "Animal", new { id = model.PetId });
             }
 
             return RedirectToAction(nameof(Index));
         }
 
-
+        [Route("/admin/articles/delete")]
         public ActionResult Delete(int id)
         {
             var article = applicationDbContext.Articles.FirstOrDefault(x => x.Id == id);
@@ -125,6 +130,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("/admin/articles/delete")]
         public ActionResult Delete(ArticleViewModel model)
         {
             var article = applicationDbContext.Articles.FirstOrDefault(x => x.Id == model.Id);

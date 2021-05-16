@@ -2,6 +2,7 @@ using AutoMapper;
 using DaiLapuDrug.Web.Data;
 using DaiLapuDrug.Web.Data.Entities;
 using DaiLapuDrug.Web.Services;
+using MailChimp.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +52,8 @@ namespace DaiLapuDrug.Web
 
             services.AddScoped(_ => new AzureBlobStorageService(Configuration.GetConnectionString("AzureBlobStorage")));
             services.AddScoped<FileAttachmentService>();
+
+            services.AddScoped(_ => new MailChimpManager(Configuration.GetValue<string>("Mailchimp:ApiKey")));
 
             services.AddAutoMapper(typeof(Startup).Assembly);
         }

@@ -17,14 +17,14 @@
 
 <script>
     function setCoverImage(petId, imageId) {
-        $.post('@Url.Action("UpdateCoverImage", "Pets", new { area = "Admin" })?petId=' + petId + '&petFileAttachmentId=' + imageId, function () {
+        $.post('@Url.Action("UpdateCoverImage", "Animal", new { area = "Admin" })?petId=' + petId + '&petFileAttachmentId=' + imageId, function () {
             updateFileAttachments();
         })
     }
 
     function deleteImage(imageId) {
         if (confirm("Вы действительно хотите удалить этот файл?")) {
-            $.post('@Url.Action("DeletePetFileAttachment", "Pets", new { area = "Admin" })?id=' + imageId, function () {
+            $.post('@Url.Action("DeletePetFileAttachment", "Animal", new { area = "Admin" })?id=' + imageId, function () {
                 updateFileAttachments();
             })
         }
