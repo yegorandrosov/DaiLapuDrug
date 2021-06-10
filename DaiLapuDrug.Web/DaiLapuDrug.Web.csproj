@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="email-templates\new-article.html" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="email-templates\new-article.html" />
+    <EmbeddedResource Include="email-templates\new-article.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -45,7 +51,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\lib\bootstrap\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
     <Folder Include="wwwroot\lib\jquery-validation-unobtrusive\" />
@@ -56,6 +61,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="compilerconfig.json" />
     <None Include="Views\Shared\Error.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="wwwroot\js\site.js" />

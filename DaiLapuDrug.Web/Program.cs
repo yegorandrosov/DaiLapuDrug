@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace DaiLapuDrug.Web
 {
@@ -15,6 +18,8 @@ namespace DaiLapuDrug.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    //webBuilder.UseContentRoot(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production" ?
+                    //    Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) : Directory.GetCurrentDirectory());
                 });
     }
 }

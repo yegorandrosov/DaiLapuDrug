@@ -4,38 +4,84 @@
 @{
 }
 
-<h3>Подписка на новости</h3>
-<form asp-action="Subscribe" asp-controller="Newsletter" id="subscribe-to-newsletters-form">
-    <label class="text-success newsletter-status" style="display: none">Вы успешно подписались на новостную рассылку</label>
-    <label class="text-danger newsletter-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
-    <div class="form-group">
-        <input class="form-control" name="email" placeholder="Ваш электронный адрес" />
+<div class="landing">
+    <div class="section1">
+        <div class="container">
+            <div class="title">
+                <img src="~/images/logo-wt.svg" />
+            </div>
+            <div class="description">Общественная организация <br />по защите прав животных</div>
+            <a href="#" class="btn btn-dark">Сделать пожертвование</a>
+            <div class="link-blocks">
+                <div>
+                    <div class="link-blocks__title">
+                        Приют&nbsp;
+                        <img src="~/images/arrow-rt.svg" />
+                    </div>
+                    <div class="link-blocks__body">
+                        В приюте живут наши<br />спасенные подопечные<br />которые ищут дом.
+                    </div>
+                </div>
+                <div>
+                    <div class="link-blocks__title">
+                        О нас&nbsp;
+                        <img src="~/images/arrow-rt.svg" />
+                    </div>
+                    <div class="link-blocks__body">
+                        В нашей команде уже ХХ<br /> человек. Вы можете к<br /> нам присоединиться.
+                    </div>
+                </div>
+                <div>
+                    <div class="link-blocks__title">
+                        Помощь&nbsp;
+                        <img src="~/images/arrow-rt.svg" />
+                    </div>
+                    <div class="link-blocks__body">
+                        Узнайте как вы можете<br /> помочь нам продолжать<br /> спасать животных в беде.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Подписаться" />
-    </div>
-</form>
+    <img class="landing-bg" src="~/images/landing-bg.svg" />
 
-<h3>Обратная связь</h3>
-<form asp-action="Contact" asp-controller="Home" id="contact-form">
-    <label class="text-success contact-status" style="display: none">Спасибо за ваше сообщение! Мы скоро с вами свяжемся</label>
-    <label class="text-danger contact-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
-    <div class="form-group">
-        <input class="form-control" name="Name" placeholder="Имя" />
+    <div class="container">
+
+
+        <h3>Подписка на новости</h3>
+        <form asp-action="Subscribe" asp-controller="Newsletter" id="subscribe-to-newsletters-form">
+            <label class="text-success newsletter-status" style="display: none">Вы успешно подписались на новостную рассылку</label>
+            <label class="text-danger newsletter-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
+            <div class="form-group">
+                <input class="form-control" name="email" placeholder="Ваш электронный адрес" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Подписаться" />
+            </div>
+        </form>
+
+        <h3>Обратная связь</h3>
+        <form asp-action="Contact" asp-controller="Home" id="contact-form">
+            <label class="text-success contact-status" style="display: none">Спасибо за ваше сообщение! Мы скоро с вами свяжемся</label>
+            <label class="text-danger contact-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
+            <div class="form-group">
+                <input class="form-control" name="Name" placeholder="Имя" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="Phone" placeholder="Телефон" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="Email" placeholder="Электронная почта" />
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="Body" placeholder="Сообщение"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Отправить" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <input class="form-control" name="Phone" placeholder="Телефон" />
-    </div>
-    <div class="form-group">
-        <input class="form-control" name="Email" placeholder="Электронная почта" />
-    </div>
-    <div class="form-group">
-        <textarea class="form-control" name="Body" placeholder="Сообщение"></textarea>
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Отправить" />
-    </div>
-</form>
+</div>
 
 <script>
     $('#subscribe-to-newsletters-form').submit(function () {

@@ -36,5 +36,11 @@ namespace DaiLapuDrug.Web.Controllers
 
             return new EmptyResult();
         }
+
+        [Route("/error")]
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }

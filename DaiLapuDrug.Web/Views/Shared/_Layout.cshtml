@@ -9,31 +9,52 @@
     <link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="~/css/main.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-dark mb-3">
+            <a href="#" class="logo" >
+                <img src="~/images/logo.svg" />
+            </a>
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Дай лапу друг</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="nav-contacts flex-grow-1 d-flex">
+                    <div>
+                        <a href="tel:38 096-39-35-377">38 096-39-35-377</a>
+                        <br />
+                        <a href="tel:38 050-765-63-10">38 050-765-63-10</a>
+                    </div>
+                    <a href="mailto:daylapu1@gmail.com">daylapu1@gmail.com</a>
+                    <div>Запорожье</div>
+                </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Админ панель</a>
+                            <a href="#" class="nav-link">Новости</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Питомцы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Контакты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Как помочь</a>
                         </li>
                     </ul>
                 </div>
             </div>
+            <a href="#" class="btn btn-dark">Сделать пожертвование</a>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+
+    <div class="nav-offset">&nbsp;</div>
+    @RenderBody()
 
     <footer class="border-top footer text-muted">
         <div class="container">
