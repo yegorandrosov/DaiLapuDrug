@@ -4,14 +4,33 @@
 @{
 }
 
+@section Head {
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+}
+
+@section Scripts {
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            slidesPerView: "auto",
+            spaceBetween: 0,
+        });
+    </script>
+}
+
 <div class="landing">
     <div class="section1">
         <div class="container">
-            <div class="title">
+            <div class="img-big"></div>
+            <div class="main-title">
                 <img src="~/images/logo-wt.svg" />
             </div>
-            <div class="description">Общественная организация <br />по защите прав животных</div>
-            <a href="#" class="btn btn-dark">Сделать пожертвование</a>
+            <div class="description">Общественная организация <br />по защите прав животных <span class="d-md-none"><br />в Запорожье</span></div>
+            <a href="#" class="btn btn-dark d-none d-md-block">Сделать пожертвование</a>
             <div class="link-blocks">
                 <div>
                     <div class="link-blocks__title">
@@ -43,47 +62,396 @@
             </div>
         </div>
     </div>
-    <img class="landing-bg" src="~/images/landing-bg.svg" />
+    <div class="landing-bg"></div>
 
     <div class="container">
-
-
-        <h3>Подписка на новости</h3>
-        <form asp-action="Subscribe" asp-controller="Newsletter" id="subscribe-to-newsletters-form">
-            <label class="text-success newsletter-status" style="display: none">Вы успешно подписались на новостную рассылку</label>
-            <label class="text-danger newsletter-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
-            <div class="form-group">
-                <input class="form-control" name="email" placeholder="Ваш электронный адрес" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Подписаться" />
-            </div>
-        </form>
-
-        <h3>Обратная связь</h3>
-        <form asp-action="Contact" asp-controller="Home" id="contact-form">
-            <label class="text-success contact-status" style="display: none">Спасибо за ваше сообщение! Мы скоро с вами свяжемся</label>
-            <label class="text-danger contact-status" style="display: none">Что-то пошло не так, попробуйте снова</label>
-            <div class="form-group">
-                <input class="form-control" name="Name" placeholder="Имя" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" name="Phone" placeholder="Телефон" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" name="Email" placeholder="Электронная почта" />
-            </div>
-            <div class="form-group">
-                <textarea class="form-control" name="Body" placeholder="Сообщение"></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Отправить" />
-            </div>
-        </form>
+        <h3>Наши подопечные</h3>
     </div>
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide pet-card">
+                <div class="pet-card__image">
+                    <img src="~/images/pets/preview_608673a9f3fc9.jpg" />
+                    <div class="pet-card__description">
+                        <div class="d-flex">
+                            <div class="pet-card__name">Смуки</div>
+                            <div class="pet-card__tags">
+                                <span>Инвалид</span>
+                                <span class="danger">Нужна помощь</span>
+                            </div>
+                        </div>
+                        <div class="pet-card__traits">
+                            <span>1,5 года</span>
+                            <span>Привит</span>
+                            <span>Стерилизован</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container about-us-section-2">
+        <h2 class="text-center">Как нам помочь</h2>
+        <div class="about-us-section-2_inner">
+            <div class="about-us-item">
+                <div class="image-block" style="background-image: url(/images/landing/treatment.svg)"></div>
+                <div class="title">Лечение</div>
+                <div class="description">
+                    Каждый имеет право на жизнь, помогите нам их спасти
+                </div>
+            </div>
+            <div class="about-us-item">
+                <div class="image-block" style="background-image: url(/images/landing/shelter.svg)"></div>
+                <div class="title">Срочное пристройство</div>
+                <div class="description">
+                    Многим из наших подопечных нужны забота и дом чтоб выжить
+                </div>
+            </div>
+            <div class="about-us-item">
+                <div class="image-block" style="background-image: url(/images/landing/needs.svg)"></div>
+                <div class="title">Нужды приюта</div>
+                <div class="description">
+                    Помогите приюту не останавливать работу и заботиться о подопечных
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-block">
+        <div class="container">
+
+            <div class="image-item" style="background-image: url(/images/landing/alert-news.png)"></div>
+
+            <div class="news-item">
+                <div class="news-inner">
+                    <div class="news-body">
+                        <div class="news-title">
+                            Щенки с энтеритом, срочно нужна ваша помощь!
+                        </div>
+                        <div class="news-content">
+                            СОС !!! К нам обратился Анатолий и рассказал вот такую историю. Срочно нужна помощь щенкам. Трое уже умерло, один капается и ещё трое пока не заболели. Это энтерит и им нужна помощь....СОС !!! К нам обратился Анатолий и рассказал вот такую историю.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="news-block">
+            <h3>Новости</h3>
+            <div class="news-container">
+
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="/images/landing/news1.png" />
+                    </div>
+                    <div class="news-inner">
+
+                        <div class="news-body">
+                            <div class="news-title">
+                                Срочно нужен куратор для Черныша, у него переломы обеих задних лап, двойной остеосинтез, очень тяжело отходит от операций, капался.
+                            </div>
+                            <div class="news-content">
+                                Сейчас, когда ситуация стабилизировалась, Черныш переехал на платную передержку. Нам нужен СРОЧНО КУРАТОР !! ...
+                            </div>
+                        </div>
+
+                        <div class="news-footer">
+                            <span class="news-date">25.06.2021</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="/images/landing/news2.png" />
+                    </div>
+                    <div class="news-inner">
+
+                        <div class="news-body">
+                            <div class="news-title">
+                                ЖАРА!!! Нужны ванночки, большие миски, ТАЗЫ!!!
+                            </div>
+                            <div class="news-content">
+                                Дорогие друзья!!! У большого приюта много пробоем и нужд и мы пишем и просим помощи ибо только от нас с вами зависит, чтоб приют был действительно домом для собачек и им было в нем комфортно... пришла жара и нам нужны детские пластиковые ванночки, возможно есть у кого-то корыта...
+                            </div>
+                        </div>
+
+                        <div class="news-footer">
+                            <span class="news-date">25.06.2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="/images/landing/news3.png" />
+                    </div>
+                    <div class="news-inner">
+
+                        <div class="news-body">
+                            <div class="news-title">
+                                Прошу посильной помощи закрыть долг за еду!
+                            </div>
+                            <div class="news-content">
+                                Каждый день все мы принимаем пищу, завтракаем, обедаем, ужинаем, перекусываем...Трудно представить что кто-то не может поесть и голодает.... потому что еды нет совсем...
+                                Наши подопечные тоже хотели бы не голодать... Мы закупили мясное и надо оплатить две платежки за 19 и 20 мая...
+                            </div>
+                        </div>
+
+                        <div class="news-footer">
+                            <span class="news-date">25.06.2021</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="/images/landing/news4.png" />
+                    </div>
+                    <div class="news-inner">
+
+                        <div class="news-body">
+                            <div class="news-title">
+                                У старичка Алекса нет ни одного зубика ... очень нужна мягкая пища!
+                            </div>
+                            <div class="news-content">
+                                Мы не часто пишем посты от КОТОДОМИКА, тяну этот груз сама, но последнее время котиков все больше и справляться стало тяжеловато... Все знают , что большая часть животных, которые попадают к нам на лечение, не могут уже стать здоровыми и имеют пожизненные диагнозы, многие...
+                            </div>
+                        </div>
+
+                        <div class="news-footer">
+                            <span class="news-date">25.06.2021</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="subscription-form wide-block">
+            <span class="wide-block__title">Хотите получать новостную рассылку о нашем приюте?</span>
+            <form asp-action="Subscribe" asp-controller="Newsletter" id="subscribe-to-newsletters-form" class="form-inline">
+                <input class="form-control" name="name" placeholder="Имя" />
+                <input class="form-control" name="email" placeholder="Email" />
+                <input type="submit" class="btn btn-dark" value="Подписаться" />
+            </form>
+        </div>
+
+        <div class="about-us-section">
+            <h1>О нас</h1>
+            <div class="background-img"></div>
+            <div class="d-md-flex">
+                <div class="description-item">
+                    <div class="title">Спасаем больных животных</div>
+                    <div class="description d-md-none">Многие из наших хвостиков требуют постоянного лечения, наблюдения и помощи. Мы не бросаем их в беде.</div>
+                </div>
+                <div class="description-item">
+                    <div class="title">Ищем новых хозяев</div>
+                    <div class="description d-md-none">Для каждого подопечного мы ищем дом и заботливую семью.</div>
+                </div>
+                <div class="description-item">
+                    <div class="title">Заботимся о старичках и инвалидах</div>
+                    <div class="description d-md-none">Не всем можно найти семью, поэтому мы создаем им все условия, заботимся и лечим.</div>
+                </div>
+                <div class="description-item">
+                    <div class="title">Набираем волонтеров в команду</div>
+                    <div class="description d-md-none">Мы всегда нуждаемся в людях и всей возможной помощи.</div>
+                </div>
+            </div>
+            <div class="d-none d-md-block d-md-flex">
+                <div class="description-item">
+                    <div class="description">Многие из наших хвостиков требуют постоянного лечения, наблюдения и помощи. Мы не бросаем их в беде.</div>
+                </div>
+                <div class="description-item">
+                    <div class="description">Для каждого подопечного мы ищем дом и заботливую семью.</div>
+                </div>
+                <div class="description-item">
+                    <div class="description">Не всем можно найти семью, поэтому мы создаем им все условия, заботимся и лечим.</div>
+                </div>
+                <div class="description-item">
+                    <div class="description">Мы всегда нуждаемся в людях и всей возможной помощи.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wide-block visit-us">
+            <span class="wide-block__title title">Приходите на прогулку с нашими собачками</span>
+            <div class="description">
+                Суббота и воскресенье с 14 до 17
+            </div>
+            <div class="image-item">
+                <video src="~/images/landing/video.mp4" loop="loop" autoplay="autoplay" preload="auto" muted />
+            </div>
+        </div>
+    </div>
+
+    <img class="d-none d-md-block" src="~/images/landing/Group63.jpg" />
+    <img style="width: 100%" class="d-md-none" src="~/images/landing/Group 176.png" />
+
+    <div class="container">
+        <div class="map-block">
+            <a target="_blank" href="https://www.google.com/maps/dir/47.8569004,35.111393/47.8560376,35.1109119/@@47.85546,35.109592,17.75z/data=!4m2!4m1!3e2" class="map-wrapper">
+                <span>посмотреть на карте</span>
+                <div class="map"></div>
+            </a>
+            <div class="location-info__container">
+                <p class="font-weight-bold location-icon d-flex"><img src="~/images/location-dark.svg" />&nbsp;Запорожье</p>
+                <div style="display: flex">
+                    <div class="location-info">
+                        <p class="description">
+                            Приют находится в районе проспекта Металлургов, между остановками пр. Металлургов и пл. Поляка (бывш. ул. 12 апреля).  За памятником "Голодомор"
+                            <br /><br />ул. 40 лет Советской Украины 38-а (внутри гаражного кооператива)
+                        </p>
+                    </div>
+                    <div class="contact-info">
+                        <p>
+
+                            <svg width="16" height="16" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 1H19C20.1 1 21 1.9 21 3V15C21 16.1 20.1 17 19 17H3C1.9 17 1 16.1 1 15V3C1 1.9 1.9 1 3 1Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M21 3L11 10L1 3" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <a href="mailto:daylapu1@gmail.com">daylapu1@gmail.com</a>
+                        </p>
+                        <p class="phone">
+                            <svg width="16" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.8881 15.9201V18.9201C20.8892 19.1986 20.8322 19.4743 20.7206 19.7294C20.6091 19.9846 20.4454 20.2137 20.2402 20.402C20.035 20.5902 19.7927 20.7336 19.5289 20.8228C19.265 20.912 18.9855 20.9452 18.7081 20.9201C15.631 20.5857 12.6751 19.5342 10.0781 17.8501C7.66194 16.3148 5.61345 14.2663 4.07812 11.8501C2.38809 9.2413 1.33636 6.27109 1.00812 3.1801C0.983127 2.90356 1.01599 2.62486 1.10462 2.36172C1.19324 2.09859 1.33569 1.85679 1.52288 1.65172C1.71008 1.44665 1.93792 1.28281 2.19191 1.17062C2.44589 1.05843 2.72046 1.00036 2.99812 1.0001H5.99812C6.48342 0.995321 6.95391 1.16718 7.32188 1.48363C7.68985 1.80008 7.93019 2.23954 7.99812 2.7201C8.12474 3.68016 8.35957 4.62282 8.69812 5.5301C8.83266 5.88802 8.86178 6.27701 8.78202 6.65098C8.70227 7.02494 8.51698 7.36821 8.24812 7.6401L6.97812 8.9101C8.40167 11.4136 10.4746 13.4865 12.9781 14.9101L14.2481 13.6401C14.52 13.3712 14.8633 13.1859 15.2372 13.1062C15.6112 13.0264 16.0002 13.0556 16.3581 13.1901C17.2654 13.5286 18.2081 13.7635 19.1681 13.8901C19.6539 13.9586 20.0975 14.2033 20.4146 14.5776C20.7318 14.9519 20.9003 15.4297 20.8881 15.9201Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>
+                                <a href="tel:38 096-39-35-377">38 096-39-35-377</a>
+                                <br />
+                                <a href="tel:38 050-765-63-10">38 050-765-63-10</a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wide-block contact-us-form">
+            <span class="wide-block__title">Отправьте нам сообщение</span>
+            <form asp-action="Contact" asp-controller="Home" id="contact-form">
+                <div>
+                    <div class="d-flex">
+                        <input class="form-control" name="Name" placeholder="Имя" />
+                        <input class="form-control" name="Email" placeholder="Электронная почта" />
+                    </div>
+                    <textarea class="form-control" name="Body" placeholder="Сообщение"></textarea>
+                </div>
+                <input type="submit" class="btn btn-dark" value="Отправить" />
+            </form>
+        </div>
+    </div>
+
+    <div id="pets-image_footer"></div>
 </div>
 
 <script>
+    $(function () {
+        $('video').get(0).play();
+    })
+
     $('#subscribe-to-newsletters-form').submit(function () {
         event.preventDefault();
         var form = $(this);

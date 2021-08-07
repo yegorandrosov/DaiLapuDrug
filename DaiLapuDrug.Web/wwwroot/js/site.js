@@ -3,10 +3,13 @@
 
 // Write your Javascript code.
 $(function () {
-    tinymce.init({
-        selector: '.html-editor',
-        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        toolbar_mode: 'floating',
-        language: 'ru'
-    });
+    if ("tinymce" in window) {
+        tinymce.init({
+            selector: '.html-editor',
+            plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            toolbar_mode: 'floating',
+            language: 'ru'
+        });
+    }
+
 })
