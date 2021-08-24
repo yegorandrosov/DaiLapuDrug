@@ -78,6 +78,11 @@ body {
     position: fixed;
     width: 100%;
     z-index: 5;
+    background: transparent;
+
+    @media @desktop {
+        background: #343a40;
+    }
 
     .logo {
         position: absolute;
@@ -159,7 +164,7 @@ body {
 
         .wide-block__title {
             max-width: 385px;
-            font-size: 35px;
+            font-size: 35px !important;
         }
     }
 }
@@ -180,6 +185,15 @@ body {
 
         .form-control {
             background: #EFEFEF;
+        }
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-bottom: 45px;
+
+        a {
+            margin: 0 5px;
         }
     }
 
@@ -237,9 +251,14 @@ body {
     .landing-bg {
         position: absolute;
         top: 100px;
-        height: 845px;
-        background: url(/images/landing-bg.svg);
         width: 100%;
+        background: url(/images/landing-bg-sm.png);
+        height: 100px;
+
+        @media @desktop {
+            height: 845px;
+            background: url(/images/landing-bg.svg);
+        }
     }
 
 
@@ -320,9 +339,18 @@ body {
         color: @white-color;
         padding-top: 100px;
         padding-bottom: 100px;
+        text-align: center;
+
+        @media @desktop {
+            text-align: unset;
+        }
 
         .btn-dark {
             margin-bottom: 47px;
+
+            @media @desktop {
+                max-width: 400px;
+            }
         }
 
         .main-title {
@@ -346,9 +374,9 @@ body {
             font-weight: 800;
             text-transform: uppercase;
             margin: 38px 0 40px 0;
-            font-size: 10px;
+            font-size: 15px;
             text-align: center;
-            line-height: 18px;
+            line-height: 22px;
         }
 
         @media @desktop {
@@ -368,9 +396,14 @@ body {
         }
 
         .link-blocks {
-            display: flex;
-            width: 720px;
-            justify-content: space-between;
+            color: #000000;
+
+            @media @desktop {
+                display: flex;
+                width: 720px;
+                justify-content: space-between;
+                color: inherit;
+            }
 
             .link-blocks__title {
                 font-size: 22px;
@@ -404,15 +437,27 @@ body {
             background-size: cover;
             margin: 0 auto;
             margin-left: -15px;
+
+            @media @desktop {
+                height: 557px;
+                margin: -70px auto 0 auto;
+            }
         }
 
-        .d-flex {
+
+        .d-md-flex {
             justify-content: space-between;
         }
 
         .description-item {
             margin-bottom: 20px;
             text-align: center;
+
+            @media @desktop {
+                width: 20%;
+                margin-bottom: unset;
+                text-align: unset;
+            }
 
             .title {
                 font-weight: bold;
@@ -423,16 +468,8 @@ body {
             .description {
                 font-size: 14px;
                 font-weight: lighter;
-            }
-        }
 
-        @media desktop {
-            .description-item {
-                width: 20%;
-                margin-bottom: unset;
-                text-align: unset;
-
-                .title {
+                @media @desktop {
                     margin-bottom: unset;
                 }
             }
@@ -565,11 +602,22 @@ body {
         margin-bottom: 90px;
         padding: 0 55px;
 
+        @media @desktop {
+            box-shadow: 0px 19px 27px rgba(0, 0, 0, 0.05);
+            background: #FFFFFF;
+            padding: 50px 94px 50px 94px;
+        }
+
         h2 {
             margin-bottom: 40px;
         }
 
         .about-us-section-2_inner {
+
+            @media @desktop {
+                display: flex;
+                justify-content: space-between;
+            }
 
             .about-us-item {
                 text-align: center;
@@ -578,67 +626,42 @@ body {
                 background: #FFFFFF;
                 margin-bottom: 12px;
 
+                @media @desktop {
+                    width: 30%;
+                    box-shadow: none;
+                    padding: unset;
+                }
+
                 .image-block {
                     margin: 24px auto;
                     background-size: cover;
                     background-position: center;
                     height: 125px;
                     width: 155px;
+
+                    @media @desktop {
+                        margin: unset;
+                        margin-bottom: 50px;
+                        height: 230px;
+                        width: unset;
+                    }
                 }
 
                 .title {
                     font-size: 17px;
                     margin-bottom: 15px;
                     font-weight: bold;
-                }
 
-                @media @desktop {
-
-                    .title {
+                    @media @desktop {
                         margin-bottom: 35px;
                         font-size: 22px;
                     }
                 }
-
-                .body {
-                    font-weight: lighter;
-                    font-size: 16px;
-                }
             }
-        }
-    }
 
-
-    @media desktop {
-        .about-us-section-2 {
-            box-shadow: 0px 19px 27px rgba(0, 0, 0, 0.05);
-            background: #FFFFFF;
-            padding: 50px 94px 50px 94px;
-
-
-            .about-us-section-2_inner {
-                display: flex;
-                justify-content: space-between;
-
-                .about-us-item {
-                    width: 30%;
-                    box-shadow: none;
-                    padding: unset;
-
-                    .image-block {
-                        margin: unset;
-                        margin-bottom: 50px;
-                        height: 230px;
-                    }
-                }
-            }
-        }
-
-
-        .about-us-section {
-            .background-img {
-                height: 557px;
-                margin: -70px auto 0 auto;
+            .body {
+                font-weight: lighter;
+                font-size: 16px;
             }
         }
     }

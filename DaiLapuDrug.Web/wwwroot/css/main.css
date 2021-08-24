@@ -48,6 +48,12 @@ body {
   position: fixed;
   width: 100%;
   z-index: 5;
+  background: transparent;
+}
+@media only screen and (min-width: 992px) {
+  .navbar {
+    background: #343a40;
+  }
 }
 .navbar .logo {
   position: absolute;
@@ -114,7 +120,7 @@ body {
   }
   .wide-block .wide-block__title {
     max-width: 385px;
-    font-size: 35px;
+    font-size: 35px !important;
   }
 }
 .landing {
@@ -132,6 +138,13 @@ body {
 }
 .landing .subscription-form .form-control {
   background: #EFEFEF;
+}
+.landing .social-icons {
+  justify-content: center;
+  margin-bottom: 45px;
+}
+.landing .social-icons a {
+  margin: 0 5px;
 }
 .landing .alert-block {
   background-color: #FFCD40;
@@ -175,9 +188,15 @@ body {
 .landing .landing-bg {
   position: absolute;
   top: 100px;
-  height: 845px;
-  background: url(/images/landing-bg.svg);
   width: 100%;
+  background: url(/images/landing-bg-sm.png);
+  height: 100px;
+}
+@media only screen and (min-width: 992px) {
+  .landing .landing-bg {
+    height: 845px;
+    background: url(/images/landing-bg.svg);
+  }
 }
 .landing .swiper-container {
   width: 100%;
@@ -244,9 +263,20 @@ body {
   color: #FFFFFF;
   padding-top: 100px;
   padding-bottom: 100px;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .landing .section1 {
+    text-align: unset;
+  }
 }
 .landing .section1 .btn-dark {
   margin-bottom: 47px;
+}
+@media only screen and (min-width: 992px) {
+  .landing .section1 .btn-dark {
+    max-width: 400px;
+  }
 }
 .landing .section1 .main-title {
   text-align: center;
@@ -267,9 +297,9 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   margin: 38px 0 40px 0;
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
-  line-height: 18px;
+  line-height: 22px;
 }
 @media only screen and (min-width: 992px) {
   .landing .section1 .description {
@@ -285,9 +315,15 @@ body {
   }
 }
 .landing .section1 .link-blocks {
-  display: flex;
-  width: 720px;
-  justify-content: space-between;
+  color: #000000;
+}
+@media only screen and (min-width: 992px) {
+  .landing .section1 .link-blocks {
+    display: flex;
+    width: 720px;
+    justify-content: space-between;
+    color: inherit;
+  }
 }
 .landing .section1 .link-blocks .link-blocks__title {
   font-size: 22px;
@@ -317,12 +353,25 @@ body {
   margin: 0 auto;
   margin-left: -15px;
 }
-.landing .about-us-section .d-flex {
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section .background-img {
+    height: 557px;
+    margin: -70px auto 0 auto;
+  }
+}
+.landing .about-us-section .d-md-flex {
   justify-content: space-between;
 }
 .landing .about-us-section .description-item {
   margin-bottom: 20px;
   text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section .description-item {
+    width: 20%;
+    margin-bottom: unset;
+    text-align: unset;
+  }
 }
 .landing .about-us-section .description-item .title {
   font-weight: bold;
@@ -333,13 +382,8 @@ body {
   font-size: 14px;
   font-weight: lighter;
 }
-@media desktop {
-  .landing .about-us-section .description-item {
-    width: 20%;
-    margin-bottom: unset;
-    text-align: unset;
-  }
-  .landing .about-us-section .description-item .title {
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section .description-item .description {
     margin-bottom: unset;
   }
 }
@@ -450,8 +494,21 @@ body {
   margin-bottom: 90px;
   padding: 0 55px;
 }
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section-2 {
+    box-shadow: 0px 19px 27px rgba(0, 0, 0, 0.05);
+    background: #FFFFFF;
+    padding: 50px 94px 50px 94px;
+  }
+}
 .landing .about-us-section-2 h2 {
   margin-bottom: 40px;
+}
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section-2 .about-us-section-2_inner {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .landing .about-us-section-2 .about-us-section-2_inner .about-us-item {
   text-align: center;
@@ -460,12 +517,27 @@ body {
   background: #FFFFFF;
   margin-bottom: 12px;
 }
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section-2 .about-us-section-2_inner .about-us-item {
+    width: 30%;
+    box-shadow: none;
+    padding: unset;
+  }
+}
 .landing .about-us-section-2 .about-us-section-2_inner .about-us-item .image-block {
   margin: 24px auto;
   background-size: cover;
   background-position: center;
   height: 125px;
   width: 155px;
+}
+@media only screen and (min-width: 992px) {
+  .landing .about-us-section-2 .about-us-section-2_inner .about-us-item .image-block {
+    margin: unset;
+    margin-bottom: 50px;
+    height: 230px;
+    width: unset;
+  }
 }
 .landing .about-us-section-2 .about-us-section-2_inner .about-us-item .title {
   font-size: 17px;
@@ -478,34 +550,9 @@ body {
     font-size: 22px;
   }
 }
-.landing .about-us-section-2 .about-us-section-2_inner .about-us-item .body {
+.landing .about-us-section-2 .about-us-section-2_inner .body {
   font-weight: lighter;
   font-size: 16px;
-}
-@media desktop {
-  .landing .about-us-section-2 {
-    box-shadow: 0px 19px 27px rgba(0, 0, 0, 0.05);
-    background: #FFFFFF;
-    padding: 50px 94px 50px 94px;
-  }
-  .landing .about-us-section-2 .about-us-section-2_inner {
-    display: flex;
-    justify-content: space-between;
-  }
-  .landing .about-us-section-2 .about-us-section-2_inner .about-us-item {
-    width: 30%;
-    box-shadow: none;
-    padding: unset;
-  }
-  .landing .about-us-section-2 .about-us-section-2_inner .about-us-item .image-block {
-    margin: unset;
-    margin-bottom: 50px;
-    height: 230px;
-  }
-  .landing .about-us-section .background-img {
-    height: 557px;
-    margin: -70px auto 0 auto;
-  }
 }
 .news-item {
   background: white;
