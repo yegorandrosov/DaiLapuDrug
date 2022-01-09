@@ -15,6 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_fonts.scss" />
+    <Content Include="scss\_global.scss" />
+    <Content Include="scss\_libs.scss" />
+    <Content Include="scss\_media.scss" />
+    <Content Include="scss\_reset.scss" />
+    <Content Include="scss\_vars.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="email-templates\new-article.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -121,13 +131,6 @@
     <None Include="wwwroot\js\jquery.amsify.suggestags.js" />
     <None Include="wwwroot\js\mvc-grid\mvc-grid.js" />
     <None Include="wwwroot\js\site.js" />
-    <None Include="wwwroot\scss\style.scss" />
-    <None Include="wwwroot\scss\_fonts.scss" />
-    <None Include="wwwroot\scss\_global.scss" />
-    <None Include="wwwroot\scss\_libs.scss" />
-    <None Include="wwwroot\scss\_media.scss" />
-    <None Include="wwwroot\scss\_reset.scss" />
-    <None Include="wwwroot\scss\_vars.scss" />
   </ItemGroup>
 
 </Project>

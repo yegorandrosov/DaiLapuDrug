@@ -29,7 +29,7 @@ namespace DaiLapuDrug.Web.Controllers
             return View(news);
         }
 
-        [Route("/news/{slug:string}")]
+        [Route("/news/{slug}")]
         public IActionResult News(string slug)
         {
             var news = applicationDbContext.Articles.Where(x => x.Slug == slug).FirstOrDefault();

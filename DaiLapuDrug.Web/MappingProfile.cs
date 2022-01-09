@@ -34,6 +34,7 @@ namespace DaiLapuDrug.Web
                 .ReverseMap();
 
             CreateMap<Article, ArticleViewModel>(MemberList.Destination)
+                .ForMember(x => x.PreviewPicture, cfg => cfg.Ignore())
                 .ReverseMap();
 
             CreateMap<Option, SelectListItem>()
