@@ -1,0 +1,114 @@
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
+}
+body {
+  background-color: #f8f8f8;
+}
+.fancybox__counter{
+  @extend %mon-500;
+}
+.container-header {
+  max-width: 1745px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-big {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-top {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.container {
+  max-width: 1465px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-1310 {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-min {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.title {
+  font-size: 50px;
+  line-height: 68px;
+  @extend %int-800;
+  color: #000;
+  margin-bottom: 15px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 27px;
+  &__tag {
+    margin: 15px 15px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #767676;
+    @extend %int-600;
+    padding: 12px 20px;
+    background: rgba(255, 205, 64, 0.13);
+    border-radius: 65px;
+    &-bank {
+      padding-right: 152px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url("../images/finance/bank.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 130px;
+        height: 27px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+      }
+    }
+  }
+  &__text {
+    max-width: 565px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 23px;
+    @extend %int-300;
+    color: #777;
+    padding-left: 35px;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      background-image: url('../images/finance/alert-circle.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      top: 0;
+      left: 0;
+    }
+  }
+}

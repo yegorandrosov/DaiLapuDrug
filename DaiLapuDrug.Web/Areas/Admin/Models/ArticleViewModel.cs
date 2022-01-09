@@ -10,6 +10,9 @@ namespace DaiLapuDrug.Web.Areas.Admin.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public string PreviewPicture { get; set; }
+
+        public string PreviewBody { get; set; }
         public bool IsPublished { get; set; } 
         public int? PetId { get; set; }
     }

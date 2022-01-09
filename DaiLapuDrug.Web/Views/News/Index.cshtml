@@ -1,0 +1,9 @@
+﻿@model List<Article>
+
+@foreach (var article in Model)
+            {
+                <div>
+                    @article.Id
+                    @article.PreviewBody
+                </div>
+            }

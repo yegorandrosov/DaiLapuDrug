@@ -109,6 +109,9 @@ namespace DaiLapuDrug.Web.Migrations
                     b.Property<int?>("PetId")
                         .HasColumnType("int");
 
+                    b.Property<string>("PreviewBody")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 

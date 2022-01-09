@@ -13,6 +13,8 @@ namespace DaiLapuDrug.Web.Data.Entities
 
         public string Title { get; set; }
 
+        public string PreviewBody { get; set; }
+
         public string Body { get; set; }
 
         public string Slug { get; set; }
