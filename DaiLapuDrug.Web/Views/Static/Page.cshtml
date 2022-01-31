@@ -1,0 +1,25 @@
+﻿@model Article
+
+<style>
+    .container {
+        background: white;
+        margin: 35px auto;
+    }
+
+    @@import url("/fonts/Inter-Bold.woff2");
+    @@import url("/fonts/Inter-ExtraBold.woff2");
+    @@import url("/fonts/Inter-Light.woff2");
+    @@import url("/fonts/Inter-Regular.woff2");
+    @@import url("/fonts/Inter-Medium.woff2");
+    @@import url("/fonts/Montserrat-Bold.woff2");
+    @@import url("/fonts/Inter-SemiBold.woff2");
+    @@import url("/fonts/Inter-Bold.woff2");
+    @@import url("/fonts/Montserrat-Regular.woff2");
+    @@import url("/fonts/Raleway-Regular.woff2");
+    @@import url("/fonts/Montserrat-Medium.woff2");
+    @@import url("/fonts/Raleway-SemiBold.woff2");
+</style>
+
+<div class="container">
+    @Html.Raw(Model.Body)
+</div>

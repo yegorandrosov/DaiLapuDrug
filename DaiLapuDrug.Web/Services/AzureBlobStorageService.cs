@@ -67,6 +67,13 @@ namespace DaiLapuDrug.Web.Services
             return ms;
         }
 
+        public async Task<Uri> GetBlobUri(string containerName, string blobName)
+        {
+            var blobClient = await GetBlobClient(containerName, blobName);
+
+            return blobClient.Uri;
+        }
+
         public async Task<Uri> GetServiceSasUriForBlob(string containerName, string blobName, string storedPolicyName = null)
         {
             var blobClient = await GetBlobClient(containerName, blobName);

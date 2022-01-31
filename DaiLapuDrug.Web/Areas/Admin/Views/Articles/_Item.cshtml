@@ -1,5 +1,9 @@
 ﻿@model ArticleViewModel
 
+<style>
+
+</style>
+
 <div class="row">
     <div class="col-6">
         <div class="row">
@@ -23,7 +27,7 @@
     <div class="col-12">
         <div class="form-group">
             <label asp-for="Body" class="control-label">Содержание</label>
-            <textarea asp-for="Body" type="text" class="form-control html-editor"></textarea>
+            <textarea asp-for="Body" type="text" class="form-control html-editor" style="min-height: 1000px"></textarea>
         </div>
     </div>
     @if (Model.PetId == null)
@@ -40,3 +44,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    function getImageUploadHandler() {
+        return '@Url.Action("UploadArticleFileAttachments", "Articles", new { area = "Admin", articleId = Model.Id })'
+    }
+</script>

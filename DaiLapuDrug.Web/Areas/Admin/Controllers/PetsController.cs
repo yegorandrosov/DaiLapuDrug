@@ -225,7 +225,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<ActionResult> UploadPetFileAttachments(int petId)
         {
-            var attachments = await fileAttachmentService.UploadFromRequest("pets");
+            var attachments = await fileAttachmentService.UploadFromRequestForm("pets");
 
             foreach (var attachment in attachments)
             {

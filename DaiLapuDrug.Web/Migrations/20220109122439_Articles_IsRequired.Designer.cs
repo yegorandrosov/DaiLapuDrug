@@ -4,14 +4,16 @@ using DaiLapuDrug.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DaiLapuDrug.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220109122439_Articles_IsRequired")]
+    partial class Articles_IsRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,9 +123,6 @@ namespace DaiLapuDrug.Web.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -132,28 +131,6 @@ namespace DaiLapuDrug.Web.Migrations
                     b.HasIndex("PetId");
 
                     b.ToTable("Articles");
-                });
-
-            modelBuilder.Entity("DaiLapuDrug.Web.Data.Entities.ArticleFileAttachment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ArticleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("FileAttachmentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArticleId");
-
-                    b.HasIndex("FileAttachmentId");
-
-                    b.ToTable("ArticleFileAttachments");
                 });
 
             modelBuilder.Entity("DaiLapuDrug.Web.Data.Entities.ContactRequest", b =>
@@ -496,21 +473,6 @@ namespace DaiLapuDrug.Web.Migrations
                     b.HasOne("DaiLapuDrug.Web.Data.Entities.Pet", "Pet")
                         .WithMany("Articles")
                         .HasForeignKey("PetId");
-                });
-
-            modelBuilder.Entity("DaiLapuDrug.Web.Data.Entities.ArticleFileAttachment", b =>
-                {
-                    b.HasOne("DaiLapuDrug.Web.Data.Entities.Article", "Article")
-                        .WithMany()
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DaiLapuDrug.Web.Data.Entities.FileAttachment", "FileAttachment")
-                        .WithMany()
-                        .HasForeignKey("FileAttachmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("DaiLapuDrug.Web.Data.Entities.PetFileAttachment", b =>

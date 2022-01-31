@@ -2,6 +2,7 @@
 using DaiLapuDrug.Web.Areas.Admin.Models;
 using DaiLapuDrug.Web.Data;
 using DaiLapuDrug.Web.Data.Entities;
+using DaiLapuDrug.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,16 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
     {
         private readonly IMapper mapper;
         private readonly ApplicationDbContext applicationDbContext;
+        private readonly FileAttachmentService fileAttachmentService;
+        private readonly AzureBlobStorageService azureBlobStorageService;
 
-        public ArticlesController(IMapper mapper, ApplicationDbContext applicationDbContext)
+        public ArticlesController(IMapper mapper, ApplicationDbContext applicationDbContext, 
+            FileAttachmentService fileAttachmentService, AzureBlobStorageService azureBlobStorageService)
         {
             this.mapper = mapper;
             this.applicationDbContext = applicationDbContext;
+            this.fileAttachmentService = fileAttachmentService;
+            this.azureBlobStorageService = azureBlobStorageService;
         }
 
         public IActionResult Index()
@@ -61,7 +67,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             if (model.PetId != null)
             {
-                return RedirectToAction("Edit", "Animal", new { id = model.PetId });
+                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
             }
 
             return RedirectToAction(nameof(Index));
@@ -102,7 +108,7 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
 
             if (model.PetId != null)
             {
-                return RedirectToAction("Edit", "Animal", new { id = model.PetId });
+                return RedirectToAction("Edit", "Pets", new { id = model.PetId });
             }
 
             return RedirectToAction(nameof(Index));
@@ -140,6 +146,41 @@ namespace DaiLapuDrug.Web.Areas.Admin.Controllers
             applicationDbContext.SaveChanges();
 
             return RedirectToAction(nameof(Index));
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> UploadArticleFileAttachments(int articleId)
+        {
+            var attachments = await fileAttachmentService.UploadFromRequestForm("articles");
+
+            foreach (var attachment in attachments)
+            {
+                var articleFileAttachment = new ArticleFileAttachment()
+                {
+                    FileAttachment = attachment,
+                    ArticleId = articleId,
+                };
+
+                applicationDbContext.ArticleFileAttachments.Add(articleFileAttachment);
+            }
+
+            await applicationDbContext.SaveChangesAsync();
+
+            List<string> uris = new List<string>();
+
+            foreach (var attachment in attachments)
+            {
+                var attachmentUri = await azureBlobStorageService.GetBlobUri("articles", attachment.BlobName);
+                uris.Add(attachmentUri.ToString());
+            }
+
+            var result = new
+            {
+                Urls = uris
+            };
+
+            return Json(result);
         }
     }
 }

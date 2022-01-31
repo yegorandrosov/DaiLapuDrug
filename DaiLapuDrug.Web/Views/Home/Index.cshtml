@@ -1,1274 +1,801 @@
-﻿@{ 
-    Layout = null;
-}
-
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DaiLapy</title>
-    <link rel="stylesheet" href="css/style.min.css">
-</head>
-
-<body>
-
-    <div class="wrapper">
-
-        <nav class="menu menu__mobile">
-            <ul class="menu__list">
-                <li class="menu__item">
-                    <a class="menu__link" href="#">новости</a>
-                </li>
-                <li class="menu__item menu__item-1">
-                    <div class="menu__link">
-                        О нас
-                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                  fill="white" />
-                        </svg>
-                    </div>
-                    <div class="menu__desc menu__desc-1">
-                        <ul class="menu__desc-list">
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Приют
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Деятельность
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Партнеры
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Команда
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Волонтерам
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="menu__desc-list">
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    История
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Отчетность
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Отзывы
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Баннеры
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Документация
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu__item menu__item-2">
-                    <div class="menu__link">
-                        питомцы
-                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                  fill="white" />
-                        </svg>
-                    </div>
-                    <div class="menu__desc menu__desc-2">
-                        <ul class="menu__desc-list">
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Ищут дом
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Тяжелобольные
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Счастливые истории
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Архив
-                                </a>
-                            </li>
-                            <li class="menu__desc-item">
-                                <a class="menu__desc-link" href="#">
-                                    Найден / Потерян
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="#">контакты</a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="help.html">Как помочь</a>
-                </li>
-            </ul>
-        </nav>
-
-        <header class="header">
-            <div class="container-header">
-                <div class="header__wrapper">
-                    <a class="header__logo" href="#">
-                        <img class="header__logo-img" src="images/header/logo.svg" alt="">
-                    </a>
-                    <div class="header__drop">
-                        <div class="header__drop-tels">
-                            <a class="header__drop-tel" href="#">
-                                38 096-39-35-377
-                            </a>
-                            <a class="header__drop-tel" href="#">
-                                38 050-765-63-10
-                            </a>
-                        </div>
-                        <a class="header__drop-mail" href="mailto:daylapu1@gmail.com">
-                            daylapu1@gmail.com
-                        </a>
-                        <a class="header__address" href="#">Запорожье</a>
-                    </div>
-                    <nav class="menu">
-                        <ul class="menu__list">
-                            <li class="menu__item">
-                                <a class="menu__link" href="#">новости</a>
-                            </li>
-                            <li class="menu__item menu__item-1">
-                                <a class="menu__link" href="#">
-                                    О нас
-                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                              fill="white" />
-                                    </svg>
-                                </a>
-                                <div class="menu__desc menu__desc-1">
-                                    <ul class="menu__desc-list">
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Приют
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Деятельность
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Партнеры
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Команда
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Волонтерам
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="menu__desc-list">
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                История
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Отчетность
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Отзывы
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Баннеры
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Документация
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu__item menu__item-2">
-                                <a class="menu__link" href="#">
-                                    питомцы
-                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                              fill="white" />
-                                    </svg>
-                                </a>
-                                <div class="menu__desc menu__desc-2">
-                                    <ul class="menu__desc-list">
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Ищут дом
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Тяжелобольные
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Счастливые истории
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Архив
-                                            </a>
-                                        </li>
-                                        <li class="menu__desc-item">
-                                            <a class="menu__desc-link" href="#">
-                                                Найден / Потерян
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="menu__item">
-                                <a class="menu__link" href="#">контакты</a>
-                            </li>
-                            <li class="menu__item">
-                                <a class="menu__link" href="help.html">Как помочь</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <a class="header__link" href="#">Сделать пожертвование</a>
-                </div>
+﻿<section class="top" style="background-image: url(../images/top/bg.jpg);">
+    <div class="container-top">
+        <div class="mobile__menu">
+            <a class="mobile__menu-btn" href="#">
+                <img class="mobile__menu-btn-img" src="/images/mobile/menu-burger-img.svg" alt="">
+            </a>
+            <div class="mobile__menu-social">
+                <a class="mobile__menu-link" href="#">
+                    <img src="/images/mobile/tel.svg" alt="">
+                </a>
+                <a class="mobile__menu-link" href="#">
+                    <img src="/images/mobile/mail.svg" alt="">
+                </a>
+                <a class="mobile__menu-link" href="#">
+                    <img src="/images/mobile/geo.svg" alt="">
+                </a>
             </div>
-        </header>
-
-        <div class="main">
-
-            <section class="top" style="background-image: url(../images/top/bg.jpg);">
-                <div class="container-top">
-                    <div class="mobile__menu">
-                        <a class="mobile__menu-btn" href="#">
-                            <img class="mobile__menu-btn-img" src="images/mobile/menu-burger-img.svg" alt="">
-                        </a>
-                        <div class="mobile__menu-social">
-                            <a class="mobile__menu-link" href="#">
-                                <img src="images/mobile/tel.svg" alt="">
-                            </a>
-                            <a class="mobile__menu-link" href="#">
-                                <img src="images/mobile/mail.svg" alt="">
-                            </a>
-                            <a class="mobile__menu-link" href="#">
-                                <img src="images/mobile/geo.svg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="top__wrapper">
-                        <div class="top__box">
-                            <a class="top__box-img-link" href="#">
-                                <picture>
-                                    <source media="(max-width: 600px)" srcset="images/mobile/logo.svg">
-                                    <img class="top__box-img" src="images/top/logo.svg" alt="">
-                                </picture>
-                            </a>
-                            <h1 class="top__box-title">
-                                Общественная организация по защите прав животных
-                            </h1>
-                            <a class="top__box-link" href="#">
-                                Сделать пожертвование
-                            </a>
-                            <div class="top__box-inner">
-                                <a class="mobile__link" href="#">
-                                    <img src="images/mobile/facebook.svg" alt="">
-                                </a>
-                                <a class="mobile__link" href="#">
-                                    <img src="images/mobile/youtube.svg" alt="">
-                                </a>
-                                <a class="mobile__link" href="#">
-                                    <img src="images/mobile/instagram.svg" alt="">
-                                </a>
-                                <a class="mobile__link" href="#">
-                                    <img src="images/mobile/telegram.svg" alt="">
-                                </a>
-                                <div class="top__box-item">
-                                    <a class="top__box-item-link" href="#">Приют</a>
-                                    <p class="top__box-item-text">
-                                        В приюте живут наши спасенные подопечные которые ищут дом.
-                                    </p>
-                                </div>
-                                <div class="top__box-item">
-                                    <a class="top__box-item-link" href="#">О нас</a>
-                                    <p class="top__box-item-text">
-                                        В нашей команде уже ХХ человек. Вы можете к нам присоединиться.
-                                    </p>
-                                </div>
-                                <div class="top__box-item">
-                                    <a class="top__box-item-link" href="#">Помощь</a>
-                                    <p class="top__box-item-text">
-                                        Узнайте как вы можете помочь нам продолжать спасать животных в беде.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <img class="top__img" src="images/top/1.jpg" alt="">
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="top-slider__inner">
-                <div class="top__box-item">
-                    <a class="top__box-item-link" href="#">Приют</a>
-                    <p class="top__box-item-text">
-                        В приюте живут наши спасенные подопечные которые ищут дом.
-                    </p>
-                </div>
-                <div class="top__box-item">
-                    <a class="top__box-item-link" href="#">О нас</a>
-                    <p class="top__box-item-text">
-                        В нашей команде уже ХХ человек. Вы можете к нам присоединиться.
-                    </p>
-                </div>
-                <div class="top__box-item">
-                    <a class="top__box-item-link" href="#">Помощь</a>
-                    <p class="top__box-item-text">
-                        Узнайте как вы можете помочь нам продолжать спасать животных в беде.
-                    </p>
-                </div>
-                <div class="top-slider__desc swiper">
-                    <div class="top-slider__desc-wrapper swiper-wrapper">
-                        <div class="top-slider__desc-slide swiper-slide">
-                            <img class="top-slider__desc-img" src="images/mobile/top-slider/1.jpg"></img>
-                            <div class="top-slider__desc-box">
-                                <h4 class="top-slider__desc-title top-slider__mob-title">Арчи</h4>
-                                <div class="top-slider__desc-inner">
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
-                                </div>
-                            </div>
-                            <div class="top-slider__desc-tags">
-                                <p class="top-slider__link top-slider__link--green">#Ищем дом</p>
-                                <p class="top-slider__link top-slider__link--red">#Нужна помощь</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__desc-slide swiper-slide">
-                            <img class="top-slider__desc-img" src="images/mobile/top-slider/2.jpg"></img>
-                            <div class="top-slider__desc-box">
-                                <h4 class="top-slider__desc-title top-slider__mob-title">Смуки</h4>
-                                <div class="top-slider__desc-inner">
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">1,5 года</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
-                                </div>
-                            </div>
-                            <div class="top-slider__desc-tags">
-                                <p class="top-slider__link top-slider__link--grey">#Инвалид</p>
-                                <p class="top-slider__link top-slider__link--red">#Нужна помощь</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__desc-slide swiper-slide">
-                            <img class="top-slider__desc-img" src="images/mobile/top-slider/3.jpg"></img>
-                            <div class="top-slider__desc-box">
-                                <h4 class="top-slider__desc-title top-slider__mob-title">Арчи</h4>
-                                <div class="top-slider__desc-inner">
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
-                                </div>
-                            </div>
-                            <div class="top-slider__desc-tags">
-                                <p class="top-slider__link top-slider__link--green">#Ищем дом</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__desc-slide swiper-slide">
-                            <img class="top-slider__desc-img" src="images/mobile/top-slider/4.jpg"></img>
-                            <div class="top-slider__desc-box">
-                                <h4 class="top-slider__desc-title top-slider__mob-title">Сэм</h4>
-                                <div class="top-slider__desc-inner">
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
-                                </div>
-                            </div>
-                            <div class="top-slider__desc-tags">
-                            </div>
-                        </div>
-                        <div class="top-slider__desc-slide swiper-slide">
-                            <img class="top-slider__desc-img" src="images/mobile/top-slider/5.jpg"></img>
-                            <div class="top-slider__desc-box">
-                                <h4 class="top-slider__desc-title top-slider__mob-title">Марс</h4>
-                                <div class="top-slider__desc-inner">
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">5 лет</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
-                                    <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
-                                </div>
-                            </div>
-                            <div class="top-slider__desc-tags">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a class="top-slider__btn" href="#">Все животные</a>
-                    </div>
-                </div>
-
-                <div class="top-slider swiper">
-                    <div class="top-slider__wrapper swiper-wrapper">
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/1.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Котофей</h6>
-                                <a class="top-slider__link top-slider__link--blue" href="#">#Под опекой</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">3 года</p>
-                                <p class="top-slider__tag">2 кг</p>
-                            </div>
-                        </div>
-
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/2.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Шелли</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/3.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Пыжик</h6>
-                                <a class="top-slider__link top-slider__link--red" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/4.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Жози</h6>
-                                <a class="top-slider__link top-slider__link--grey" href="#">#Инвалид</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/5.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Котофей</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">3 года</p>
-                                <p class="top-slider__tag">2 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/6.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Лада</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">4 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/7.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Пыжик</h6>
-                                <a class="top-slider__link top-slider__link--violet" href="#">#Ищем куратора</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/1.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Котофей</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">3 года</p>
-                                <p class="top-slider__tag">2 кг</p>
-                            </div>
-                        </div>
-
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/2.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Шелли</h6>
-                                <a class="top-slider__link top-slider__link--grey" href="#">#Инвалид</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/3.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Пыжик</h6>
-                                <a class="top-slider__link top-slider__link--red" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/4.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Жози</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/5.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Котофей</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">3 года</p>
-                                <p class="top-slider__tag">2 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/6.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Лада</h6>
-                                <a class="top-slider__link top-slider__link--violet" href="#">#Ищем куратора</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">4 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                        <div class="top-slider__slide swiper-slide">
-                            <a class="top-slider__slide-link" href="#">
-                                <img class="top-slider__img" src="images/top-slider/7.jpg" alt="">
-                            </a>
-                            <div class="top-slider__box">
-                                <h6 class="top-slider__title">Пыжик</h6>
-                                <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
-                            </div>
-                            <div class="top-slider__tags">
-                                <p class="top-slider__tag">Привит</p>
-                                <p class="top-slider__tag">Стер.</p>
-                                <p class="top-slider__tag">8 мес.</p>
-                                <p class="top-slider__tag">5 кг</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <a class="top-slider__btn" href="#">Все животные</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="help">
-                <div class="container">
-                    <div class="help__wrapper-mobile">
-                        <div class="help__box-mobile">
-                            <h4 class="help__title-mobile">Как нам помочь</h4>
-                            <div class="help__inner-mobile">
-                                <img src="images/mobile/help/1.svg" alt="">
-                                <h4 class="help__box-title-mobile">Лечение</h4>
-                                <h4 class="help__box-text-mobile">
-                                    Помогите нам купить лекарства и спасти жизни
-                                </h4>
-                            </div>
-                            <div class="help__inner-mobile">
-                                <img src="images/mobile/help/2.svg" alt="">
-                                <h4 class="help__box-title-mobile">Срочное пристройство</h4>
-                                <h4 class="help__box-text-mobile">
-                                    Многим из наших подопечных нужны забота и особенные условия, вы можете стать опекуном
-                                </h4>
-                            </div>
-                            <div class="help__inner-mobile">
-                                <img src="images/mobile/help/3.svg" alt="">
-                                <h4 class="help__box-title-mobile">Нужды приюта</h4>
-                                <h4 class="help__box-text-mobile">
-                                    Помогите нам поддерживать хорошие условия в приюте и не останавливать работу
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="help__wrapper">
-                        <h4 class="help__title">3 способа нам помочь</h4>
-                        <div class="help__box">
-                            <a class="help__item" href="#">
-                                <img class="help__item-img" src="images/help/1.png" alt="">
-                                <h6 class="help__item-title">Лечение</h6>
-                                <p class="help__item-text">
-                                    Каждый имеет право на жизнь, помогите нам купить лекарста и позаботится о них
-                                </p>
-                            </a>
-                            <a class="help__item" href="#">
-                                <img class="help__item-img" src="images/help/2.png" alt="">
-                                <h6 class="help__item-title">Срочное пристройство</h6>
-                                <p class="help__item-text">
-                                    Многим из наших подопечных нужны забота и дом чтоб выжить, может вы хотите стать опекуном?
-                                </p>
-                            </a>
-                            <a class="help__item" href="#">
-                                <img class="help__item-img" src="images/help/3.png" alt="">
-                                <h6 class="help__item-title">Нужды приюта</h6>
-                                <p class="help__item-text">
-                                    Помогите приюту не останавливать работу и заботиться о подопечных, нам всегда нужны средства на
-                                    улучшения
-                                    условий
-                                </p>
-                            </a>
-                        </div>
-                        <a class="help__link" href="#">Детальнее</a>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="sos">
-                <div class="sos__wrapper-mobile">
-                    <div class="sos__box">
-                        <a class="sos__box-link" href="#">Адресная Помощь</a>
-                        <h4 class="sos__box-title sos__box-title-mobile">
-                            Щенки с энтеритом, срочно нужна ваша помощь!
-                        </h4>
-                    </div>
-                    <img src="images/sos/1.jpg" class="sos__img" alt="">
-                    <p class="sos__text sos__text-mobile">
-                        СОС !!! К нам обратился Анатолий и рассказал вот такую историю. Срочно нужна помощь щенкам. Трое уже
-                        умерло,
-                        один капается и ещё трое пока не заболели. Это энтерит и им нужна помощь....СОС !!!
-                    </p>
-                    <a class="sos__btn-mobile" href="#">помочь</a>
-                </div>
-
-                <div class="container">
-                    <div class="sos__wrapper">
-                        <img src="images/sos/1.jpg" class="sos__img" alt="">
-                        <div class="sos__inner">
-                            <div class="sos__box">
-                                <h4 class="sos__box-title">
-                                    Щенки с энтеритом, срочно нужна ваша помощь!
-                                </h4>
-                                <a class="sos__box-link" href="#">Адресная Помощь</a>
-                            </div>
-                            <p class="sos__text">
-                                СОС !!! К нам обратился Анатолий и рассказал вот такую историю. Срочно нужна помощь щенкам. Трое уже
-                                умерло,
-                                один капается и ещё трое пока не заболели. Это энтерит и им нужна помощь....СОС !!!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="news">
-                <div class="container-min">
-                    <h2 class="news__title">Новости</h2>
-                    <div class="news__wrapper-mobile">
-                        <div class="news__item-mobile">
-                            <p class="news__inner-data">25.06.2021</p>
-                            <h4 class="news__box-title">
-                                Прошу посильной помощи закрыть долг за еду!
-                            </h4>
-                            <a class="news__item-link" href="#">
-                                <img class="news__item-img" src="images/news/3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="news__item-mobile">
-                            <p class="news__inner-data">26.06.2021</p>
-                            <h4 class="news__box-title">
-                                Прошу посильной помощи закрыть долг за еду!
-                            </h4>
-                            <div class="news__item-link-inner">
-                                <a class="news__item-link" href="#">
-                                    <img class="news__item-img" src="images/news/4.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="news__item-mobile">
-                            <p class="news__inner-data">26.06.2021</p>
-                            <h4 class="news__box-title">
-                                У старичка Алекса нет ни одного зубика ... очень нужна мягкая пища!
-                            </h4>
-                            <div class="news__item-link-inner">
-                                <a class="news__item-link" href="#">
-                                    <img class="news__item-img" src="images/news/1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news__wrapper">
-                        <div class="news__item">
-                            <div class="news__item-link-inner">
-                                <a class="news__item-link" href="#">
-                                    <img class="news__item-img" src="images/news/1.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="news__box">
-                                <h4 class="news__box-title">
-                                    Срочно нужен куратор для Черныша, у него переломы обеих задних лап, двойной остеосинтез, очень тяжело
-                                    отходит от операций, капался.
-                                </h4>
-                                <p class="news__box-text">
-                                    Сейчас, когда ситуация стабилизировалась, Черныш переехал на платную передержку. Нам нужен СРОЧНО
-                                    КУРАТОР
-                                    !! ...
-                                </p>
-                                <div class="news__inner">
-                                    <p class="news__inner-data">25.06.2021</p>
-                                    <a class="news__inner-link" href="#">Читать полностью</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-link" href="#">
-                                <img class="news__item-img" src="images/news/2.jpg" alt="">
-                            </a>
-                            <div class="news__box">
-                                <h4 class="news__box-title">
-                                    ЖАРА!!! Нужны ванночки, большие миски, ТАЗЫ!!!
-                                </h4>
-                                <p class="news__box-text">
-                                    Дорогие друзья!!! У большого приюта много пробоем и нужд и мы пишем и просим помощи ибо только от нас
-                                    с
-                                    вами зависит, чтоб приют был действительно домом для собачек и им было в нем комфортно... пришла жара
-                                    и
-                                    нам нужны детские пластиковые ванночки, возможно есть у кого-то корыта...
-                                </p>
-                                <div class="news__inner">
-                                    <p class="news__inner-data">25.06.2021</p>
-                                    <a class="news__inner-link" href="#">Читать полностью</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <a class="news__item-link" href="#">
-                                <img class="news__item-img" src="images/news/3.jpg" alt="">
-                            </a>
-                            <div class="news__box">
-                                <h4 class="news__box-title">
-                                    Прошу посильной помощи закрыть долг за еду!
-                                </h4>
-                                <p class="news__box-text">
-                                    Каждый день все мы принимаем пищу, завтракаем, обедаем, ужинаем, перекусываем...Трудно представить что
-                                    кто-то не может поесть и голодает.... потому что еды нет совсем...
-                                    Наши подопечные тоже хотели бы не голодать... Мы закупили мясное и надо оплатить две платежки за 19 и
-                                    20
-                                    мая...
-                                </p>
-                                <div class="news__inner">
-                                    <p class="news__inner-data">22.06.2021</p>
-                                    <a class="news__inner-link" href="#">Читать полностью</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="news__item">
-                            <div class="news__item-link-inner">
-                                <a class="news__item-link" href="#">
-                                    <img class="news__item-img" src="images/news/4.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="news__box">
-                                <h4 class="news__box-title">
-                                    У старичка Алекса нет ни одного зубика ... очень нужна мягкая пища!
-                                </h4>
-                                <p class="news__box-text">
-                                    Мы не часто пишем посты от КОТОДОМИКА, тяну этот груз сама, но последнее время котиков все больше и
-                                    справляться стало тяжеловато... Все знают , что большая часть животных, которые попадают к нам на
-                                    лечение,
-                                    не могут уже стать здоровыми и имеют пожизненные диагнозы, многие...
-                                </p>
-                                <div class="news__inner">
-                                    <p class="news__inner-data">22.06.2021</p>
-                                    <a class="news__inner-link" href="#">Читать полностью</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="top-slider__btn news__btn" href="#">Читать все</a>
-                </div>
-            </section>
-
-
-
-            <section class="mailing">
-                <div class="container">
-                    <div class="mailing__wrapper">
-                        <h4 class="mailing__title">
-                            Хотите получать новостную рассылку о нашем приюте?
-                        </h4>
-                        <form class="mailing__form" action="#">
-                            <input class="mailing__input" type="text" placeholder="Имя">
-                            <input class="mailing__input" type="text" placeholder="Email">
-                            <button class="mailing__btn" type="submit">подписаться</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <section class="vizit vizit__mobile">
-                <div class="container">
-                    <div class="vizit__wrapper">
-                        <h4 class="vizit__title">
-                            Приходите на прогулку с нашими собачками
-                        </h4>
-                        <p class="vizit__text">
-                            Суббота и воскресенье с 14 до 17
-                        </p>
-                        <video class="vizit__img" src="images/vizit/video.mp4" autoplay loop>
-                    </div>
-                </div>
-            </section>
-
-            <section class="gallery gallery__mobile">
-                <div class="gallery__wrapper">
-                    <img class="gallery__img" src="images/gallery/1.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/2.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/3.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/4.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/5.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/6.jpg" alt="">
-                </div>
-            </section>
-
-            <section class="about-us">
-                <div class="container-min">
-                    <div class="about-us__wrapper">
-                        <div class="about-us__title-box">
-                            <h4 class="about-us__title">О нас</h4>
-                            <p class="about-us__text">
-                                Организация “Дай лапу, друг” существует на средства членов организаци, а также неравнодушных горожан.
-                            </p>
-                        </div>
-                        <picture>
-                            <source media="(max-width: 600px)" srcset="images/mobile/about-us/bg.png">
-                            <img class="about-us__img" src="images/about-us/bg.jpg" alt="">
-                        </picture>
-                        <div class="about-us__items">
-                            <div class="about-us__item">
-                                <h4 class="about-us__item-title">
-                                    Спасаем больных животных
-                                </h4>
-                                <p class="about-us__item-text">
-                                    Организация “Дай лапу, друг” существует на средства
-                                </p>
-                            </div>
-                            <div class="about-us__item">
-                                <h4 class="about-us__item-title">
-                                    Ищем новых хозяев
-                                </h4>
-                                <p class="about-us__item-text">
-                                    Организация “Дай лапу, друг” существует на средства
-                                </p>
-                            </div>
-                            <div class="about-us__item">
-                                <h4 class="about-us__item-title">
-                                    Заботимся о старичках и инвалидах
-                                </h4>
-                                <p class="about-us__item-text">
-                                    Организация “Дай лапу, друг” существует на средства
-                                </p>
-                            </div>
-                            <div class="about-us__item">
-                                <h4 class="about-us__item-title">
-                                    Заботимся о старичках и инвалидах
-                                </h4>
-                                <p class="about-us__item-text">
-                                    Организация “Дай лапу, друг” существует на средства
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="vizit">
-                <div class="container">
-                    <div class="vizit__wrapper">
-                        <h4 class="vizit__title">
-                            Приходите на прогулку с нашими собачками
-                        </h4>
-                        <p class="vizit__text">
-                            Суббота и воскресенье с 14 до 17
-                        </p>
-                        <video class="vizit__img" src="images/vizit/video.mp4" autoplay loop>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <section class="gallery">
-                <div class="gallery__wrapper">
-                    <img class="gallery__img" src="images/gallery/1.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/2.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/3.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/4.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/5.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/6.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/7.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/8.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/9.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/10.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/11.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/12.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/13.jpg" alt="">
-                    <img class="gallery__img" src="images/gallery/14.jpg" alt="">
-                </div>
-            </section>
-
-
-            <section class="map">
-                <div class="container-min">
-                    <div class="map__wrapper">
-                        <div class="map__img-box">
-                            <img class="map__img" src="images/map/map.jpg" alt="">
-                            <a class="map__img-link" href="#">
-                                посмотреть на карте
-                            </a>
-                        </div>
-                        <div class="map__text-box">
-                            <h4 class="map__title">Запорожье</h4>
-                            <p class="map__text">
-                                Приют находится в районе проспекта Металлургов, между остановками пр. Металлургов и пл. Поляка (бывш.
-                                ул.
-                                12 апреля). За памятником "Голодомор"
-                            </p>
-                            <p class="map__text">
-                                ул. 40 лет Советской Украины 38-а (внутри гаражного кооператива)
-                            </p>
-                        </div>
-                        <div class="map__link-box">
-                            <a class="map__link-box-link" href="mailto:daylapu1@gmail.com" class="map__mail">daylapu1@gmail.com</a>
-                            <div class="map__tels">
-                                <a class="map__tel-link" href="tel:380963935377">38 096-39-35-377</a>
-                                <a class="map__tel-link" href="tel:380507656310">38 050-765-63-10</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="send">
-                <div class="container">
-                    <div class="send__wrapper">
-                        <h4 class="send__title">
-                            Отправьте нам сообщение
-                        </h4>
-                        <form class="send__form" action="#">
-                            <div class="send__form-top">
-                                <input class="send__input" type="text" placeholder="Имя">
-                                <input class="send__input send__input-mobile" type="text" placeholder="Email">
-                                <button class="send__btn" type="submit">
-                                    Отправить
-                                </button>
-                            </div>
-                            <textarea class="send__textarea" placeholder="Сообщение"></textarea>
-                            <button class="send__btn send__btn-mobile" type="submit">
-                                Отправить
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <section class="footer__img-section">
-                <div class="container-min">
-                    <img class="footer__img" src="images/footer/bg.jpg" alt="">
-                </div>
-            </section>
-
         </div>
-
-        <footer class="footer">
-            <div class="container-footer">
-                <div class="footer__wrapper">
-                    <div class="footer__home-box">
-                        <a class="footer__logo-link footer__logo-link-mobile" href="#">
-                            <picture>
-                                <source media="(max-width: 650px)" srcset="images/mobile/footer/logo.svg">
-                                <img src="images/footer/footer-logo.svg" alt="">
-                            </picture>
-                        </a>
-                        <div class="footer__socials">
-                            <a class="footer__social-link" href="#">
-                                <picture>
-                                    <source media="(max-width: 650px)" srcset="images/mobile/facebook.svg">
-                                    <img src="images/footer/facebook.svg" alt="">
-                                </picture>
-                            </a>
-                            <a class="footer__social-link" href="#">
-                                <picture>
-                                    <source media="(max-width: 650px)" srcset="images/mobile/youtube.svg">
-                                    <img src="images/footer/youtube.svg" alt="">
-                                </picture>
-                            </a>
-                            <a class="footer__social-link" href="#">
-                                <picture>
-                                    <source media="(max-width: 650px)" srcset="images/mobile/instagram.svg">
-                                    <img src="images/footer/instagram.svg" alt="">
-                                </picture>
-                            </a>
-                            <a class="footer__social-link" href="#">
-                                <picture>
-                                    <source media="(max-width: 650px)" srcset="images/mobile/telegram.svg">
-                                    <img src="images/footer/telegram.svg" alt="">
-                                </picture>
-                            </a>
-                        </div>
-                        <a class="footer__logo-link" href="#">
-                            <picture>
-                                <source media="(max-width: 650px)" srcset="images/mobile/footer/logo.svg">
-                                <img src="images/footer/footer-logo.svg" alt="">
-                            </picture>
-                        </a>
-                        <nav class="footer__menu-mobile">
-                            <ul class="menu__list">
-                                <li class="menu__item">
-                                    <a class="menu__link" href="#">новости</a>
-                                </li>
-                                <li class="menu__item menu__item-1">
-                                    <div class="menu__link">
-                                        О нас
-                                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                                  fill="white" />
-                                        </svg>
-                                    </div>
-                                    <div class="menu__desc menu__desc-1">
-                                        <ul class="menu__desc-list">
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Приют
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Деятельность
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Партнеры
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Команда
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Волонтерам
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <ul class="menu__desc-list">
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    История
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Отчетность
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Отзывы
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Баннеры
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Документация
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="menu__item menu__item-2">
-                                    <div class="menu__link">
-                                        питомцы
-                                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
-                                                  fill="white" />
-                                        </svg>
-                                    </div>
-                                    <div class="menu__desc menu__desc-2">
-                                        <ul class="menu__desc-list">
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Ищут дом
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Тяжелобольные
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Счастливые истории
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Архив
-                                                </a>
-                                            </li>
-                                            <li class="menu__desc-item">
-                                                <a class="menu__desc-link" href="#">
-                                                    Найден / Потерян
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="menu__link" href="#">контакты</a>
-                                </li>
-                                <li class="menu__item">
-                                    <a class="menu__link" href="help.html">Как помочь</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <p class="footer__copy">@@2021 Дай лапу, друг</p>
+        <div class="top__wrapper">
+            <div class="top__box">
+                <a class="top__box-img-link" href="#">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/images/mobile/logo.svg">
+                        <img class="top__box-img" src="/images/top/logo.svg" alt="">
+                    </picture>
+                </a>
+                <h1 class="top__box-title">
+                    Общественная организация по защите прав животных
+                </h1>
+                <a class="top__box-link" href="#">
+                    Сделать пожертвование
+                </a>
+                <div class="top__box-inner">
+                    <a class="mobile__link" href="#">
+                        <img src="/images/mobile/facebook.svg" alt="">
+                    </a>
+                    <a class="mobile__link" href="#">
+                        <img src="/images/mobile/youtube.svg" alt="">
+                    </a>
+                    <a class="mobile__link" href="#">
+                        <img src="/images/mobile/instagram.svg" alt="">
+                    </a>
+                    <a class="mobile__link" href="#">
+                        <img src="/images/mobile/telegram.svg" alt="">
+                    </a>
+                    <div class="top__box-item">
+                        <a class="top__box-item-link" href="#">Приют</a>
+                        <p class="top__box-item-text">
+                            В приюте живут наши спасенные подопечные которые ищут дом.
+                        </p>
                     </div>
-                    <nav class="footer__menu">
-                        <ul class="footer__menu-list">
-                            <h4 class="footer__menu-title">Деятельность</h4>
-                            <li><a href="#">Проекты</a></li>
-                            <li><a href="#">Акции</a></li>
-                            <li><a href="#">Статьи</a></li>
-                        </ul>
-                        <ul class="footer__menu-list">
-                            <h4 class="footer__menu-title">Как помочь</h4>
-                            <li><a href="#">Финансово</a></li>
-                            <li><a href="#">Волонтерство</a></li>
-                            <li><a href="#">Опекунство</a></li>
-                            <li><a href="#">Адресная помощь</a></li>
-                        </ul>
-                        <ul class="footer__menu-list">
-                            <h4 class="footer__menu-title">Организация</h4>
-                            <li><a href="#">Документы</a></li>
-                            <li><a href="#">Команда</a></li>
-                            <li><a href="#">История создания</a></li>
-                        </ul>
-                    </nav>
+                    <div class="top__box-item">
+                        <a class="top__box-item-link" href="#">О нас</a>
+                        <p class="top__box-item-text">
+                            В нашей команде уже ХХ человек. Вы можете к нам присоединиться.
+                        </p>
+                    </div>
+                    <div class="top__box-item">
+                        <a class="top__box-item-link" href="#">Помощь</a>
+                        <p class="top__box-item-text">
+                            Узнайте как вы можете помочь нам продолжать спасать животных в беде.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </footer>
+            <img class="top__img" src="/images/top/1.jpg" alt="">
+        </div>
+    </div>
+</section>
 
+
+<section class="top-slider__inner">
+    <div class="top__box-item">
+        <a class="top__box-item-link" href="#">Приют</a>
+        <p class="top__box-item-text">
+            В приюте живут наши спасенные подопечные которые ищут дом.
+        </p>
+    </div>
+    <div class="top__box-item">
+        <a class="top__box-item-link" href="#">О нас</a>
+        <p class="top__box-item-text">
+            В нашей команде уже ХХ человек. Вы можете к нам присоединиться.
+        </p>
+    </div>
+    <div class="top__box-item">
+        <a class="top__box-item-link" href="#">Помощь</a>
+        <p class="top__box-item-text">
+            Узнайте как вы можете помочь нам продолжать спасать животных в беде.
+        </p>
+    </div>
+    <div class="top-slider__desc swiper">
+        <div class="top-slider__desc-wrapper swiper-wrapper">
+            <div class="top-slider__desc-slide swiper-slide">
+                <img class="top-slider__desc-img" src="/images/mobile/top-slider/1.jpg"></img>
+                <div class="top-slider__desc-box">
+                    <h4 class="top-slider__desc-title top-slider__mob-title">Арчи</h4>
+                    <div class="top-slider__desc-inner">
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
+                    </div>
+                </div>
+                <div class="top-slider__desc-tags">
+                    <p class="top-slider__link top-slider__link--green">#Ищем дом</p>
+                    <p class="top-slider__link top-slider__link--red">#Нужна помощь</p>
+                </div>
+            </div>
+            <div class="top-slider__desc-slide swiper-slide">
+                <img class="top-slider__desc-img" src="/images/mobile/top-slider/2.jpg"></img>
+                <div class="top-slider__desc-box">
+                    <h4 class="top-slider__desc-title top-slider__mob-title">Смуки</h4>
+                    <div class="top-slider__desc-inner">
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">1,5 года</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
+                    </div>
+                </div>
+                <div class="top-slider__desc-tags">
+                    <p class="top-slider__link top-slider__link--grey">#Инвалид</p>
+                    <p class="top-slider__link top-slider__link--red">#Нужна помощь</p>
+                </div>
+            </div>
+            <div class="top-slider__desc-slide swiper-slide">
+                <img class="top-slider__desc-img" src="/images/mobile/top-slider/3.jpg"></img>
+                <div class="top-slider__desc-box">
+                    <h4 class="top-slider__desc-title top-slider__mob-title">Арчи</h4>
+                    <div class="top-slider__desc-inner">
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
+                    </div>
+                </div>
+                <div class="top-slider__desc-tags">
+                    <p class="top-slider__link top-slider__link--green">#Ищем дом</p>
+                </div>
+            </div>
+            <div class="top-slider__desc-slide swiper-slide">
+                <img class="top-slider__desc-img" src="/images/mobile/top-slider/4.jpg"></img>
+                <div class="top-slider__desc-box">
+                    <h4 class="top-slider__desc-title top-slider__mob-title">Сэм</h4>
+                    <div class="top-slider__desc-inner">
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">2 года</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Стерилизован</p>
+                    </div>
+                </div>
+                <div class="top-slider__desc-tags">
+                </div>
+            </div>
+            <div class="top-slider__desc-slide swiper-slide">
+                <img class="top-slider__desc-img" src="/images/mobile/top-slider/5.jpg"></img>
+                <div class="top-slider__desc-box">
+                    <h4 class="top-slider__desc-title top-slider__mob-title">Марс</h4>
+                    <div class="top-slider__desc-inner">
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">5 лет</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">Привит</p>
+                        <p class="top-slider__desc-subtext top-slider__mob-subtext">до 35 см</p>
+                    </div>
+                </div>
+                <div class="top-slider__desc-tags">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="top-slider__btn" href="#">Все животные</a>
+        </div>
     </div>
 
+    <div class="top-slider swiper">
+        <div class="top-slider__wrapper swiper-wrapper">
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/1.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Котофей</h6>
+                    <a class="top-slider__link top-slider__link--blue" href="#">#Под опекой</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">3 года</p>
+                    <p class="top-slider__tag">2 кг</p>
+                </div>
+            </div>
 
-    <script src="js/main.min.js"></script>
-</body>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/2.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Шелли</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/3.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Пыжик</h6>
+                    <a class="top-slider__link top-slider__link--red" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/4.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Жози</h6>
+                    <a class="top-slider__link top-slider__link--grey" href="#">#Инвалид</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/5.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Котофей</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">3 года</p>
+                    <p class="top-slider__tag">2 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/6.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Лада</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">4 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/7.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Пыжик</h6>
+                    <a class="top-slider__link top-slider__link--violet" href="#">#Ищем куратора</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/1.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Котофей</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">3 года</p>
+                    <p class="top-slider__tag">2 кг</p>
+                </div>
+            </div>
 
-</html>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/2.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Шелли</h6>
+                    <a class="top-slider__link top-slider__link--grey" href="#">#Инвалид</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/3.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Пыжик</h6>
+                    <a class="top-slider__link top-slider__link--red" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/4.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Жози</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/5.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Котофей</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">3 года</p>
+                    <p class="top-slider__tag">2 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/6.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Лада</h6>
+                    <a class="top-slider__link top-slider__link--violet" href="#">#Ищем куратора</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">4 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+            <div class="top-slider__slide swiper-slide">
+                <a class="top-slider__slide-link" href="#">
+                    <img class="top-slider__img" src="/images/top-slider/7.jpg" alt="">
+                </a>
+                <div class="top-slider__box">
+                    <h6 class="top-slider__title">Пыжик</h6>
+                    <a class="top-slider__link top-slider__link--green" href="#">#Ищем дом</a>
+                </div>
+                <div class="top-slider__tags">
+                    <p class="top-slider__tag">Привит</p>
+                    <p class="top-slider__tag">Стер.</p>
+                    <p class="top-slider__tag">8 мес.</p>
+                    <p class="top-slider__tag">5 кг</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="top-slider__btn" href="#">Все животные</a>
+        </div>
+    </div>
+</section>
+
+<section class="help">
+    <div class="container">
+        <div class="help__wrapper-mobile">
+            <div class="help__box-mobile">
+                <h4 class="help__title-mobile">Как нам помочь</h4>
+                <div class="help__inner-mobile">
+                    <img src="/images/mobile/help/1.svg" alt="">
+                    <h4 class="help__box-title-mobile">Лечение</h4>
+                    <h4 class="help__box-text-mobile">
+                        Помогите нам купить лекарства и спасти жизни
+                    </h4>
+                </div>
+                <div class="help__inner-mobile">
+                    <img src="/images/mobile/help/2.svg" alt="">
+                    <h4 class="help__box-title-mobile">Срочное пристройство</h4>
+                    <h4 class="help__box-text-mobile">
+                        Многим из наших подопечных нужны забота и особенные условия, вы можете стать опекуном
+                    </h4>
+                </div>
+                <div class="help__inner-mobile">
+                    <img src="/images/mobile/help/3.svg" alt="">
+                    <h4 class="help__box-title-mobile">Нужды приюта</h4>
+                    <h4 class="help__box-text-mobile">
+                        Помогите нам поддерживать хорошие условия в приюте и не останавливать работу
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="help__wrapper">
+            <h4 class="help__title">3 способа нам помочь</h4>
+            <div class="help__box">
+                <a class="help__item" href="#">
+                    <img class="help__item-img" src="/images/help/1.png" alt="">
+                    <h6 class="help__item-title">Лечение</h6>
+                    <p class="help__item-text">
+                        Каждый имеет право на жизнь, помогите нам купить лекарста и позаботится о них
+                    </p>
+                </a>
+                <a class="help__item" href="#">
+                    <img class="help__item-img" src="/images/help/2.png" alt="">
+                    <h6 class="help__item-title">Срочное пристройство</h6>
+                    <p class="help__item-text">
+                        Многим из наших подопечных нужны забота и дом чтоб выжить, может вы хотите стать опекуном?
+                    </p>
+                </a>
+                <a class="help__item" href="#">
+                    <img class="help__item-img" src="/images/help/3.png" alt="">
+                    <h6 class="help__item-title">Нужды приюта</h6>
+                    <p class="help__item-text">
+                        Помогите приюту не останавливать работу и заботиться о подопечных, нам всегда нужны средства на
+                        улучшения
+                        условий
+                    </p>
+                </a>
+            </div>
+            <a class="help__link" href="#">Детальнее</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="sos">
+    <div class="sos__wrapper-mobile">
+        <div class="sos__box">
+            <a class="sos__box-link" href="#">Адресная Помощь</a>
+            <h4 class="sos__box-title sos__box-title-mobile">
+                Щенки с энтеритом, срочно нужна ваша помощь!
+            </h4>
+        </div>
+        <img src="/images/sos/1.jpg" class="sos__img" alt="">
+        <p class="sos__text sos__text-mobile">
+            СОС !!! К нам обратился Анатолий и рассказал вот такую историю. Срочно нужна помощь щенкам. Трое уже
+            умерло,
+            один капается и ещё трое пока не заболели. Это энтерит и им нужна помощь....СОС !!!
+        </p>
+        <a class="sos__btn-mobile" href="#">помочь</a>
+    </div>
+
+    <div class="container">
+        <div class="sos__wrapper">
+            <img src="/images/sos/1.jpg" class="sos__img" alt="">
+            <div class="sos__inner">
+                <div class="sos__box">
+                    <h4 class="sos__box-title">
+                        Щенки с энтеритом, срочно нужна ваша помощь!
+                    </h4>
+                    <a class="sos__box-link" href="#">Адресная Помощь</a>
+                </div>
+                <p class="sos__text">
+                    СОС !!! К нам обратился Анатолий и рассказал вот такую историю. Срочно нужна помощь щенкам. Трое уже
+                    умерло,
+                    один капается и ещё трое пока не заболели. Это энтерит и им нужна помощь....СОС !!!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="news">
+    <div class="container-min">
+        <h2 class="news__title">Новости</h2>
+        <div class="news__wrapper-mobile">
+            <div class="news__item-mobile">
+                <p class="news__inner-data">25.06.2021</p>
+                <h4 class="news__box-title">
+                    Прошу посильной помощи закрыть долг за еду!
+                </h4>
+                <a class="news__item-link" href="#">
+                    <img class="news__item-img" src="/images/news/3.jpg" alt="">
+                </a>
+            </div>
+            <div class="news__item-mobile">
+                <p class="news__inner-data">26.06.2021</p>
+                <h4 class="news__box-title">
+                    Прошу посильной помощи закрыть долг за еду!
+                </h4>
+                <div class="news__item-link-inner">
+                    <a class="news__item-link" href="#">
+                        <img class="news__item-img" src="/images/news/4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="news__item-mobile">
+                <p class="news__inner-data">26.06.2021</p>
+                <h4 class="news__box-title">
+                    У старичка Алекса нет ни одного зубика ... очень нужна мягкая пища!
+                </h4>
+                <div class="news__item-link-inner">
+                    <a class="news__item-link" href="#">
+                        <img class="news__item-img" src="/images/news/1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="news__wrapper">
+            <div class="news__item">
+                <div class="news__item-link-inner">
+                    <a class="news__item-link" href="#">
+                        <img class="news__item-img" src="/images/news/1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="news__box">
+                    <h4 class="news__box-title">
+                        Срочно нужен куратор для Черныша, у него переломы обеих задних лап, двойной остеосинтез, очень тяжело
+                        отходит от операций, капался.
+                    </h4>
+                    <p class="news__box-text">
+                        Сейчас, когда ситуация стабилизировалась, Черныш переехал на платную передержку. Нам нужен СРОЧНО
+                        КУРАТОР
+                        !! ...
+                    </p>
+                    <div class="news__inner">
+                        <p class="news__inner-data">25.06.2021</p>
+                        <a class="news__inner-link" href="#">Читать полностью</a>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <a class="news__item-link" href="#">
+                    <img class="news__item-img" src="/images/news/2.jpg" alt="">
+                </a>
+                <div class="news__box">
+                    <h4 class="news__box-title">
+                        ЖАРА!!! Нужны ванночки, большие миски, ТАЗЫ!!!
+                    </h4>
+                    <p class="news__box-text">
+                        Дорогие друзья!!! У большого приюта много пробоем и нужд и мы пишем и просим помощи ибо только от нас
+                        с
+                        вами зависит, чтоб приют был действительно домом для собачек и им было в нем комфортно... пришла жара
+                        и
+                        нам нужны детские пластиковые ванночки, возможно есть у кого-то корыта...
+                    </p>
+                    <div class="news__inner">
+                        <p class="news__inner-data">25.06.2021</p>
+                        <a class="news__inner-link" href="#">Читать полностью</a>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <a class="news__item-link" href="#">
+                    <img class="news__item-img" src="/images/news/3.jpg" alt="">
+                </a>
+                <div class="news__box">
+                    <h4 class="news__box-title">
+                        Прошу посильной помощи закрыть долг за еду!
+                    </h4>
+                    <p class="news__box-text">
+                        Каждый день все мы принимаем пищу, завтракаем, обедаем, ужинаем, перекусываем...Трудно представить что
+                        кто-то не может поесть и голодает.... потому что еды нет совсем...
+                        Наши подопечные тоже хотели бы не голодать... Мы закупили мясное и надо оплатить две платежки за 19 и
+                        20
+                        мая...
+                    </p>
+                    <div class="news__inner">
+                        <p class="news__inner-data">22.06.2021</p>
+                        <a class="news__inner-link" href="#">Читать полностью</a>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <div class="news__item-link-inner">
+                    <a class="news__item-link" href="#">
+                        <img class="news__item-img" src="/images/news/4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="news__box">
+                    <h4 class="news__box-title">
+                        У старичка Алекса нет ни одного зубика ... очень нужна мягкая пища!
+                    </h4>
+                    <p class="news__box-text">
+                        Мы не часто пишем посты от КОТОДОМИКА, тяну этот груз сама, но последнее время котиков все больше и
+                        справляться стало тяжеловато... Все знают , что большая часть животных, которые попадают к нам на
+                        лечение,
+                        не могут уже стать здоровыми и имеют пожизненные диагнозы, многие...
+                    </p>
+                    <div class="news__inner">
+                        <p class="news__inner-data">22.06.2021</p>
+                        <a class="news__inner-link" href="#">Читать полностью</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="top-slider__btn news__btn" href="#">Читать все</a>
+    </div>
+</section>
+
+
+
+<section class="mailing">
+    <div class="container">
+        <div class="mailing__wrapper">
+            <h4 class="mailing__title">
+                Хотите получать новостную рассылку о нашем приюте?
+            </h4>
+            <form class="mailing__form" action="#">
+                <input class="mailing__input" type="text" placeholder="Имя">
+                <input class="mailing__input" type="text" placeholder="Email">
+                <button class="mailing__btn" type="submit">подписаться</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="vizit vizit__mobile">
+    <div class="container">
+        <div class="vizit__wrapper">
+            <h4 class="vizit__title">
+                Приходите на прогулку с нашими собачками
+            </h4>
+            <p class="vizit__text">
+                Суббота и воскресенье с 14 до 17
+            </p>
+            <video class="vizit__img" src="/images/vizit/video.mp4" autoplay loop>
+        </div>
+    </div>
+</section>
+
+<section class="gallery gallery__mobile">
+    <div class="gallery__wrapper">
+        <img class="gallery__img" src="/images/gallery/1.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/2.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/3.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/4.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/5.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/6.jpg" alt="">
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container-min">
+        <div class="about-us__wrapper">
+            <div class="about-us__title-box">
+                <h4 class="about-us__title">О нас</h4>
+                <p class="about-us__text">
+                    Организация “Дай лапу, друг” существует на средства членов организаци, а также неравнодушных горожан.
+                </p>
+            </div>
+            <picture>
+                <source media="(max-width: 600px)" srcset="/images/mobile/about-us/bg.png">
+                <img class="about-us__img" src="/images/about-us/bg.jpg" alt="">
+            </picture>
+            <div class="about-us__items">
+                <div class="about-us__item">
+                    <h4 class="about-us__item-title">
+                        Спасаем больных животных
+                    </h4>
+                    <p class="about-us__item-text">
+                        Организация “Дай лапу, друг” существует на средства
+                    </p>
+                </div>
+                <div class="about-us__item">
+                    <h4 class="about-us__item-title">
+                        Ищем новых хозяев
+                    </h4>
+                    <p class="about-us__item-text">
+                        Организация “Дай лапу, друг” существует на средства
+                    </p>
+                </div>
+                <div class="about-us__item">
+                    <h4 class="about-us__item-title">
+                        Заботимся о старичках и инвалидах
+                    </h4>
+                    <p class="about-us__item-text">
+                        Организация “Дай лапу, друг” существует на средства
+                    </p>
+                </div>
+                <div class="about-us__item">
+                    <h4 class="about-us__item-title">
+                        Заботимся о старичках и инвалидах
+                    </h4>
+                    <p class="about-us__item-text">
+                        Организация “Дай лапу, друг” существует на средства
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="vizit">
+    <div class="container">
+        <div class="vizit__wrapper">
+            <h4 class="vizit__title">
+                Приходите на прогулку с нашими собачками
+            </h4>
+            <p class="vizit__text">
+                Суббота и воскресенье с 14 до 17
+            </p>
+            <video class="vizit__img" src="/images/vizit/video.mp4" autoplay loop>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="gallery">
+    <div class="gallery__wrapper">
+        <img class="gallery__img" src="/images/gallery/1.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/2.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/3.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/4.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/5.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/6.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/7.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/8.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/9.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/10.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/11.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/12.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/13.jpg" alt="">
+        <img class="gallery__img" src="/images/gallery/14.jpg" alt="">
+    </div>
+</section>
+
+
+<section class="map">
+    <div class="container-min">
+        <div class="map__wrapper">
+            <div class="map__img-box">
+                <img class="map__img" src="/images/map/map.jpg" alt="">
+                <a class="map__img-link" href="#">
+                    посмотреть на карте
+                </a>
+            </div>
+            <div class="map__text-box">
+                <h4 class="map__title">Запорожье</h4>
+                <p class="map__text">
+                    Приют находится в районе проспекта Металлургов, между остановками пр. Металлургов и пл. Поляка (бывш.
+                    ул.
+                    12 апреля). За памятником "Голодомор"
+                </p>
+                <p class="map__text">
+                    ул. 40 лет Советской Украины 38-а (внутри гаражного кооператива)
+                </p>
+            </div>
+            <div class="map__link-box">
+                <a class="map__link-box-link" href="mailto:daylapu1@gmail.com" class="map__mail">daylapu1@gmail.com</a>
+                <div class="map__tels">
+                    <a class="map__tel-link" href="tel:380963935377">38 096-39-35-377</a>
+                    <a class="map__tel-link" href="tel:380507656310">38 050-765-63-10</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="send">
+    <div class="container">
+        <div class="send__wrapper">
+            <h4 class="send__title">
+                Отправьте нам сообщение
+            </h4>
+            <form class="send__form" action="#">
+                <div class="send__form-top">
+                    <input class="send__input" type="text" placeholder="Имя">
+                    <input class="send__input send__input-mobile" type="text" placeholder="Email">
+                    <button class="send__btn" type="submit">
+                        Отправить
+                    </button>
+                </div>
+                <textarea class="send__textarea" placeholder="Сообщение"></textarea>
+                <button class="send__btn send__btn-mobile" type="submit">
+                    Отправить
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="footer__img-section">
+    <div class="container-min">
+        <img class="footer__img" src="/images/footer/bg.jpg" alt="">
+    </div>
+</section>

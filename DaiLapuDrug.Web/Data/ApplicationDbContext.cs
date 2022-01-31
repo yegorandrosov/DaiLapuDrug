@@ -23,6 +23,8 @@ namespace DaiLapuDrug.Web.Data
 
         public DbSet<PetFileAttachment> PetFileAttachments { get; set; }
 
+        public DbSet<ArticleFileAttachment> ArticleFileAttachments { get; set; }
+
         public DbSet<ContactRequest> ContactRequests { get; set; }
     }
 }

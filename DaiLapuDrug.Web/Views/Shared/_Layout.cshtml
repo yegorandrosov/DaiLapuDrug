@@ -1,147 +1,470 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Дай лапу друг</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/main.min.css" />
-
-    @RenderSection("Head", false)
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaiLapy</title>
+    <link rel="stylesheet" href="/css/style.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="d-md-none custom-nav">
-            <div class="custom-nav_inner">
-                <a href="javascript:void(0)" onclick="toggleMobileNavbar();">
-                    <img src="~/images/landing/mobile-nav-expand.png" />
-                </a>
 
-                <div>
-                    <a href="#" class="custom-nav_icon">
-                        <img src="~/images/landing/custom-nav-phone.png" />
-                    </a>
-                    <a href="#" class="custom-nav_icon">
-                        <img src="~/images/landing/custom-nav-mail.png" />
-                    </a>
-                    <a href="#" class="custom-nav_icon">
-                        <img src="~/images/landing/custom-nav-location.png" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="d-none d-md-block">
+    <div class="wrapper">
 
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-dark mb-3">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a href="#" class="logo">
-                    <img src="~/images/logo.svg" />
-                </a>
-                <div class="container">
-                    <div class="nav-contacts flex-grow-1 d-flex">
-                        <div>
-                            <a href="tel:38 096-39-35-377">38 096-39-35-377</a>
-                            <br />
-                            <a href="tel:38 050-765-63-10">38 050-765-63-10</a>
-                        </div>
-                        <a href="mailto:daylapu1@gmail.com">daylapu1@gmail.com</a>
-                        <div><img src="~/images/location.svg" />Запорожье</div>
+        <nav class="menu menu__mobile">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link" href="#">новости</a>
+                </li>
+                <li class="menu__item menu__item-1">
+                    <div class="menu__link">
+                        О нас
+                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                  fill="white" />
+                        </svg>
                     </div>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Новости</a>
+                    <div class="menu__desc menu__desc-1">
+                        <ul class="menu__desc-list">
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="@Url.Action("Page", "Static", new { slug = "priyut" })">
+                                    Приют
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">О нас</a>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Деятельность
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Питомцы</a>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Партнеры
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Контакты</a>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Команда
+                                </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Как помочь</a>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Волонтерам
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu__desc-list">
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    История
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Отчетность
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Баннеры
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Документация
+                                </a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <a href="#" class="btn btn-dark d-none d-md-block">Сделать пожертвование</a>
-            </nav>
-        </div>
-
-        <div class="d-md-none mobile-navbar" id="mobile-navbar">
-            <div class="menu-container">
-                <a href="#">Новости</a>
-
-                <a data-bs-toggle="collapse" href="#collapseAboutUs" role="button" aria-expanded="false" aria-controls="collapseAboutUs">
-                    О Нас&nbsp;<img src="~/images/landing/Vector 136.png" />
-                </a>
-
-                <div class="collapse" id="collapseAboutUs">
-                    <div>
-                        <a href="#">Приют</a>
-                        <a href="#">Деятельность</a>
-                        <a href="#">Партнеры</a>
-                        <a href="#">Команда</a>
-                        <a href="#">Волонтерам</a>
-                        <a href="#">История</a>
-                        <a href="#">Отчетность</a>
-                        <a href="#">Отзывы</a>
-                        <a href="#">Баннеры</a>
-                        <a href="#">Документация</a>
+                </li>
+                <li class="menu__item menu__item-2">
+                    <div class="menu__link">
+                        питомцы
+                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                  fill="white" />
+                        </svg>
                     </div>
+                    <div class="menu__desc menu__desc-2">
+                        <ul class="menu__desc-list">
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Ищут дом
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Тяжелобольные
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Счастливые истории
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Архив
+                                </a>
+                            </li>
+                            <li class="menu__desc-item">
+                                <a class="menu__desc-link" href="#">
+                                    Найден / Потерян
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">контакты</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="help.html">Как помочь</a>
+                </li>
+            </ul>
+        </nav>
+
+        <header class="header">
+            <div class="container-header">
+                <div class="header__wrapper">
+                    <a class="header__logo" href="@Url.Action("Index", "Home")">
+                        <img class="header__logo-img" src="/images/header/logo.svg" alt="logo">
+                    </a>
+                    <div class="header__drop">
+                        <div class="header__drop-tels">
+                            <a class="header__drop-tel" href="tel:38 096-39-35-377">
+                                38 096-39-35-377
+                            </a>
+                            <a class="header__drop-tel" href="tel:38 050-765-63-10">
+                                38 050-765-63-10
+                            </a>
+                        </div>
+                        <a class="header__drop-mail" href="mailto:daylapu1@gmail.com">
+                            daylapu1@gmail.com
+                        </a>
+                        <a class="header__address" href="https://www.google.com/maps/place/%D0%94%D0%B0%D0%B9+%D0%BB%D0%B0%D0%BF%D1%83,+%D0%B4%D1%80%D1%83%D0%B3/@@47.8530834,35.1076963,16.25z/data=!4m5!3m4!1s0x40dc66d754235635:0x6c4a21cb8d3607f5!8m2!3d47.8560382!4d35.1110572">Запорожье</a>
+                    </div>
+                    <nav class="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a class="menu__link" href="#">новости</a>
+                            </li>
+                            <li class="menu__item menu__item-1">
+                                <a class="menu__link" href="#">
+                                    О нас
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                              fill="white" />
+                                    </svg>
+                                </a>
+                                <div class="menu__desc menu__desc-1">
+                                    <ul class="menu__desc-list">
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="@Url.Action("Page", "Static", new { slug = "priyut" })">
+                                                Приют
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Деятельность
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Партнеры
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Команда
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Волонтерам
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="menu__desc-list">
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                История
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Отчетность
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Отзывы
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Баннеры
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Документация
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item menu__item-2">
+                                <a class="menu__link" href="#">
+                                    питомцы
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                              fill="white" />
+                                    </svg>
+                                </a>
+                                <div class="menu__desc menu__desc-2">
+                                    <ul class="menu__desc-list">
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Ищут дом
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Тяжелобольные
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Счастливые истории
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Архив
+                                            </a>
+                                        </li>
+                                        <li class="menu__desc-item">
+                                            <a class="menu__desc-link" href="#">
+                                                Найден / Потерян
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="#">контакты</a>
+                            </li>
+                            <li class="menu__item">
+                                <a class="menu__link" href="@Url.Action("Help", "Home")">Как помочь</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="header__link" href="@Url.Action("Help", "Home")">Сделать пожертвование</a>
                 </div>
-                <a href="#">Питомцы</a>
-                <a href="#">Контакты</a>
-                <a href="#">Как помочь</a>
             </div>
+        </header>
+
+        <div class="main">
+
+            @RenderBody()
+
         </div>
-    </header>
 
-    <div class="nav-offset"></div>
-    @RenderBody()
+        <footer class="footer">
+            <div class="container-footer">
+                <div class="footer__wrapper">
+                    <div class="footer__home-box">
+                        <a class="footer__logo-link footer__logo-link-mobile" href="#">
+                            <picture>
+                                <source media="(max-width: 650px)" srcset="/images/mobile/footer/logo.svg">
+                                <img src="/images/footer/footer-logo.svg" alt="">
+                            </picture>
+                        </a>
+                        <div class="footer__socials">
+                            <a class="footer__social-link" href="#">
+                                <picture>
+                                    <source media="(max-width: 650px)" srcset="/images/mobile/facebook.svg">
+                                    <img src="/images/footer/facebook.svg" alt="">
+                                </picture>
+                            </a>
+                            <a class="footer__social-link" href="#">
+                                <picture>
+                                    <source media="(max-width: 650px)" srcset="/images/mobile/youtube.svg">
+                                    <img src="/images/footer/youtube.svg" alt="">
+                                </picture>
+                            </a>
+                            <a class="footer__social-link" href="#">
+                                <picture>
+                                    <source media="(max-width: 650px)" srcset="/images/mobile/instagram.svg">
+                                    <img src="/images/footer/instagram.svg" alt="">
+                                </picture>
+                            </a>
+                            <a class="footer__social-link" href="#">
+                                <picture>
+                                    <source media="(max-width: 650px)" srcset="/images/mobile/telegram.svg">
+                                    <img src="/images/footer/telegram.svg" alt="">
+                                </picture>
+                            </a>
+                        </div>
+                        <a class="footer__logo-link" href="#">
+                            <picture>
+                                <source media="(max-width: 650px)" srcset="/images/mobile/footer/logo.svg">
+                                <img src="/images/footer/footer-logo.svg" alt="">
+                            </picture>
+                        </a>
+                        <nav class="footer__menu-mobile">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">новости</a>
+                                </li>
+                                <li class="menu__item menu__item-1">
+                                    <div class="menu__link">
+                                        О нас
+                                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                                  fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="menu__desc menu__desc-1">
+                                        <ul class="menu__desc-list">
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="@Url.Action("Page", "Static", new { slug = "priyut" })">
+                                                    Приют
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Деятельность
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Партнеры
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Команда
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Волонтерам
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <ul class="menu__desc-list">
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    История
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Отчетность
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Отзывы
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Баннеры
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Документация
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item menu__item-2">
+                                    <div class="menu__link">
+                                        питомцы
+                                        <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.65079 0.240743C1.23147 -0.118679 0.600166 -0.0701172 0.240743 0.349209C-0.118679 0.768534 -0.0701172 1.39983 0.349209 1.75926L1.65079 0.240743ZM4.5 4L3.84921 4.75926C4.2237 5.08025 4.7763 5.08025 5.15079 4.75926L4.5 4ZM8.65079 1.75926C9.07012 1.39983 9.11868 0.768534 8.75926 0.349209C8.39983 -0.0701172 7.76853 -0.118679 7.34921 0.240743L8.65079 1.75926ZM0.349209 1.75926L3.84921 4.75926L5.15079 3.24074L1.65079 0.240743L0.349209 1.75926ZM5.15079 4.75926L8.65079 1.75926L7.34921 0.240743L3.84921 3.24074L5.15079 4.75926Z"
+                                                  fill="white" />
+                                        </svg>
+                                    </div>
+                                    <div class="menu__desc menu__desc-2">
+                                        <ul class="menu__desc-list">
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Ищут дом
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Тяжелобольные
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Счастливые истории
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Архив
+                                                </a>
+                                            </li>
+                                            <li class="menu__desc-item">
+                                                <a class="menu__desc-link" href="#">
+                                                    Найден / Потерян
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="#">контакты</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__link" href="help.html">Как помочь</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <p class="footer__copy">@@2021 Дай лапу, друг</p>
+                    </div>
+                    <nav class="footer__menu">
+                        <ul class="footer__menu-list">
+                            <h4 class="footer__menu-title">Деятельность</h4>
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Акции</a></li>
+                            <li><a href="#">Статьи</a></li>
+                        </ul>
+                        <ul class="footer__menu-list">
+                            <h4 class="footer__menu-title">Как помочь</h4>
+                            <li><a href="#">Финансово</a></li>
+                            <li><a href="#">Волонтерство</a></li>
+                            <li><a href="#">Опекунство</a></li>
+                            <li><a href="#">Адресная помощь</a></li>
+                        </ul>
+                        <ul class="footer__menu-list">
+                            <h4 class="footer__menu-title">Организация</h4>
+                            <li><a href="#">Документы</a></li>
+                            <li><a href="#">Команда</a></li>
+                            <li><a href="#">История создания</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - WebApplication3 - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+    </div>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/mvc-grid/mvc-grid.js"></script>
-    <script>
-        document.querySelectorAll(".mvc-grid").forEach(element => new MvcGrid(element));
-    </script>
-    @RenderSection("Scripts", required: false)
-    <script>
-        function toggleMobileNavbar() {
-            event.preventDefault();
-            event.stopPropagation();
 
-            $('.mobile-navbar').addClass('open');
-        }
-
-        window.addEventListener('click', function (e) {
-            if (document.getElementById('mobile-navbar').contains(e.target)) {
-                // Clicked in box
-            } else {
-                // Clicked outside the box
-
-                if ($('.mobile-navbar').hasClass('open')) {
-                    $('.mobile-navbar').removeClass('open');
-                }
-            }
-        });
-    </script>
+    <script src="js/main.min.js"></script>
 </body>
+
 </html>

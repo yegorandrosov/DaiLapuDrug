@@ -1,114 +1,111 @@
-﻿@model PetDetailsViewModel
-
-@{
-    ViewBag.Title = Model.Name;
-}
-
-@section Scripts {
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
-    <script>
-        $(function () {
-            $('.owl-carousel').owlCarousel({
-                margin: 10,
-                items: 1,
-                autoplay: true,
-            })
-        })
-    </script>
-
-}
-
-<div class="row">
-    <div class="col-12 col-md-4">
-        <div class="owl-carousel">
-            @foreach (var imageUrl in Model.ImageUrls)
-            {
-                <div>
-                    <img src="@imageUrl" title="@Model.Name" />
-                </div>
-            }
+﻿
+<div class="mobile__menu-sect">
+    <div class="mobile__menu">
+        <a class="mobile__menu-btn" href="#">
+            <img class="mobile__menu-btn-img" src="/images/mobile/menu-burger-img.svg" alt="">
+        </a>
+        <div class="mobile__menu-social">
+            <a class="mobile__menu-link" href="#">
+                <img src="/images/mobile/tel.svg" alt="">
+            </a>
+            <a class="mobile__menu-link" href="#">
+                <img src="/images/mobile/mail.svg" alt="">
+            </a>
+            <a class="mobile__menu-link" href="#">
+                <img src="/images/mobile/geo.svg" alt="">
+            </a>
         </div>
     </div>
-    <div class="col-12 col-md-8">
-        <h4>@ViewBag.Title</h4>
-        @if (!string.IsNullOrWhiteSpace(Model.AnimalId))
-        {
-            <h6>ID: @Model.AnimalId</h6>
-        }
-
-        <table>
-            @if (!string.IsNullOrWhiteSpace(Model.Age))
-            {
-                <tr>
-                    <td>Возраст</td>
-                    <td>@Model.Age</td>
-                </tr>
-            }
-
-            @if (!string.IsNullOrWhiteSpace(Model.Breed))
-            {
-                <tr>
-                    <td>Порода</td>
-                    <td>@Model.Breed</td>
-                </tr>
-            }
-
-            @if (!string.IsNullOrWhiteSpace(Model.Color))
-            {
-                <tr>
-                    <td>Окрас</td>
-                    <td>@Model.Color</td>
-                </tr>
-            }
-
-            @if (!string.IsNullOrWhiteSpace(Model.Hair))
-            {
-                <tr>
-                    <td>Тип шерсти</td>
-                    <td>@Model.Hair</td>
-                </tr>
-            }
-
-            @if (!string.IsNullOrWhiteSpace(Model.Status))
-            {
-                <tr>
-                    <td>Статус</td>
-                    <td>@Model.Status</td>
-                </tr>
-            }
-
-            @if (!string.IsNullOrWhiteSpace(Model.Personality))
-            {
-                <tr>
-                    <td>Характер</td>
-                    <td>@Model.Personality</td>
-                </tr>
-            }
-
-            <tr>
-                <td>Стерилизован</td>
-                <td>@(Model.IsSterilized ? "Да" : "Нет")</td>
-            </tr>
-        </table>
-    </div>
 </div>
-
-<div>
-    @Html.Raw(Model.Description)
-</div>
-
-@if (Model.Posts.Count > 0)
-{
-    <h5 class="mb-2">Новости</h5>
-    <div>
-        @foreach (var post in Model.Posts)
-        {
-            <div class="mb-2" style="border: 1px solid black">
-                <div>@post.Date</div>
-                <div>@Html.Raw(post.Body)</div>
+<section class="pet">
+    <div class="container">
+        <div class="pet__wrapper">
+            <div class="pet__top">
+                <div class="pet__top-image">
+                    <img class="pet__img" src="/images/cart/1.jpg" alt="">
+                </div>
+                <div class="pet__box">
+                    <h4 class="pet__title">Мартин</h4>
+                    <p class="pet__subtext">
+                        Рыжий котик с большой душой и мягкими лапами.
+                    </p>
+                    <div class="pet__tags">
+                        <p class="pet__tag">2 года</p>
+                        <p class="pet__tag">Привит</p>
+                        <p class="pet__tag">Стерилизован</p>
+                    </div>
+                    <div class="pet__info">
+                        <p class="pet__info-text">Возраст 6 месяцев</p>
+                        <p class="pet__info-text">Окрас Рыжий</p>
+                        <p class="pet__info-text">Тип шерсти Короткошерстный</p>
+                        <p class="pet__info-text">Статус Лечение закончено</p>
+                        <p class="pet__info-text">Характер Дружит с собаками, Компаньон</p>
+                        <p class="pet__info-text">Стерилизован Нет</p>
+                    </div>
+                </div>
             </div>
-        } 
+            <div class="pet__gallery">
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-1.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-1.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-2.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-2.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-3.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-3.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-4.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-4.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-1.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-1.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-2.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-2.jpg" alt="">
+                </div>
+                <div class="pet__gallery-item" data-fancybox="gallery" data-width="1088"
+                     data-height="816" data-src="/images/cart/mini-3.jpg">
+                    <img class="pet__gallery-img" src="/images/cart/mini-3.jpg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
-}
+    <div class="container-big">
+        <div class="pet__inner">
+            <div class="pet__box-text">
+                <p class="pet__data">05.04.21</p>
+                <div class="pet__box-inner">
+                    <p class="pet__text">
+                        Самый тяжелый наш подопечных на сегодня котик Мартин из Степногорска .
+                    </p>
+                    <p class="pet__text">
+                        Перелом основания черепа по типу трещины, перелом таза со смещением , капаем ...
+                        Прогнозов пока нет .
+                        Только надежда ....
+                        Очень прошу помощи , долг по Мартину 1300 гр и он растёт каждый день .
+                    </p>
+                </div>
+            </div>
+            <div class="pet__box-text">
+                <p class="pet__data">02.04.21</p>
+                <div class="pet__box-inner">
+                    <p class="pet__text">
+                        Котик Мартин, ещё один рыжик в очень тяжелом состояния ...
+                        ЧМТ очень сильное, нарушение координации движения, носовое кровотечение, температура 37, 6, кости
+                        вроде целы, общее состояние пока тяжелое, капают.
+                        Дорогие наши друзья, я понимаю, что мы уже надоели вам с постоянными просьбами, но выжить в
+                        Степногорске этот котик бы не смог... у нас же есть шанс спасти рыжее солнышко .
+                    </p>
+                </div>
+            </div>
+            <a class="pet__link-btn" href="#">Перевести помощь</a>
+            <a class="pet__link" href="#">посмотреть всех</a>
+        </div>
+    </div>
+</section>

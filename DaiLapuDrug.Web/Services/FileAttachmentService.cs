@@ -25,7 +25,7 @@ namespace DaiLapuDrug.Web.Services
             this.applicationDbContext = applicationDbContext;
         }
 
-        public async Task<List<FileAttachment>> UploadFromRequest(string containerName)
+        public async Task<List<FileAttachment>> UploadFromRequestForm(string containerName)
         {
             var fileAttachments = new List<FileAttachment>();
 

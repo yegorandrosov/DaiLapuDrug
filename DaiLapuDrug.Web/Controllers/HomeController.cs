@@ -3,10 +3,6 @@ using DaiLapuDrug.Web.Data;
 using DaiLapuDrug.Web.Data.Entities;
 using DaiLapuDrug.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DaiLapuDrug.Web.Controllers
 {
@@ -21,10 +17,9 @@ namespace DaiLapuDrug.Web.Controllers
             this.mapper = mapper;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View();
+
+        public IActionResult Help() => View();
 
         [ValidateAntiForgeryToken]
         public IActionResult Contact(ContactViewModel contactViewModel)
@@ -38,9 +33,6 @@ namespace DaiLapuDrug.Web.Controllers
         }
 
         [Route("/error")]
-        public IActionResult Error()
-        {
-            return View();
-        }
+        public IActionResult Error() => View();
     }
 }

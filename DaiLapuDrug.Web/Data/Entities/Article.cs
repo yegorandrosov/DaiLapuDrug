@@ -32,5 +32,16 @@ namespace DaiLapuDrug.Web.Data.Entities
         public bool IsPublished { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public bool IsRequired { get; set; }
+
+        public EArticleType Type { get; set; }
+    }
+
+    public enum EArticleType
+    {
+        Default,
+        Pet,
+        Static
     }
 }
